@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+    
+    <ImageView
+        android:id="@+id/imgPhoto"
+        android:layout_width="@dimen/explorer_image_height"
+        android:layout_height="@dimen/explorer_image_height"
+        android:layout_margin="@dimen/margin_tiny"
+        android:scaleType="centerCrop"
+        android:src="@drawable/img_auction_sample" />
+</RelativeLayout>

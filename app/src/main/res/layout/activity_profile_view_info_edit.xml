@@ -1,0 +1,94 @@
+<LinearLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@id/container"
+    style="@style/layout_mm"
+    android:background="@color/white"
+    android:orientation="vertical">
+	<LinearLayout
+		android:id="@+id/bar"
+		android:layout_width="match_parent"
+		android:layout_height="@dimen/btn_profile_width"
+		android:gravity="center_vertical"
+		android:orientation="horizontal">
+		<ImageButton
+			android:id="@+id/img_back_id"
+			android:layout_width="@dimen/btn_profile_width"
+			android:layout_height="@dimen/btn_profile_width"
+			android:src="@drawable/ic_arrow_left"
+			android:background="@color/transparent"
+			android:layout_gravity="start|center_vertical"
+			android:contentDescription="@string/action_leave"
+            android:onClick="onButtonClick"/>
+	</LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/gray_color" />
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="@dimen/profile_edit_rectangle_height"
+		android:baselineAligned="false"
+        android:layout_marginLeft="@dimen/margin_normal"
+        android:layout_marginRight="@dimen/margin_normal"
+		android:orientation="horizontal">
+
+		<RelativeLayout
+			android:layout_width="0dp"
+			android:layout_height="match_parent"
+			android:layout_weight="1"
+            android:layout_marginTop="@dimen/margin_small"
+            android:layout_marginBottom="@dimen/margin_small">
+			<com.coco.livestreaming.app.ui.view.RectangleImageView
+				android:id="@+id/img_large"
+				style="@style/layout_mm"
+                android:layout_margin="@dimen/margin_tiny"
+				android:src="@drawable/album_empty_default_img"
+				android:onClick="onButtonClick"/>
+			<ImageView
+				android:id="@+id/img_large_rect"
+				style="@style/layout_mm"
+				android:background="@color/white"
+				android:visibility="invisible" />
+		</RelativeLayout>
+
+        <GridView
+            android:id="@+id/gv_choose"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:stretchMode="columnWidth"
+            android:numColumns="2"
+            android:verticalSpacing="@dimen/margin_small"
+            android:horizontalSpacing="@dimen/margin_small"/>
+    </LinearLayout>
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content">
+
+		<TextView
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:padding="@dimen/margin_normal"
+			android:text="@string/str_photo_drag_info"
+			android:textSize="@dimen/text_size_10"
+			android:id="@+id/textView2" />
+	</LinearLayout>
+
+    <View style="@style/splite_line_gray"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_small"
+        android:background="@color/light_gray_color" />
+    <View style="@style/splite_line_gray"/>
+
+    <ScrollView
+        style="@style/layout_m0"
+        android:scrollbars="none">
+        <include
+	        style="@style/layout_mw"
+	        layout="@layout/profile_edit_bottom" />
+    </ScrollView>
+</LinearLayout>

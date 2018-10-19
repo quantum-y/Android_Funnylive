@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_profile_view_info_edit_photo"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_98"
+    tools:context="com.coco.livestreaming.app.ui.activity.ProfileViewInfoEditPhotoActivity">
+    <ImageButton
+        android:id="@+id/btn_check_id"
+        android:layout_width="@dimen/item_small_height"
+        android:layout_height="@dimen/item_small_height"
+        android:background="@drawable/ic_check_golden"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:onClick="onButtonClick"/>
+
+    <ImageButton
+        android:id="@+id/btn_cancel_id"
+        android:layout_width="@dimen/item_small_height"
+        android:layout_height="@dimen/item_small_height"
+        android:background="@drawable/ic_close_light_gray"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:onClick="onButtonClick"/>
+
+    <ImageButton
+        android:id="@+id/btn_rotate_id"
+        android:layout_width="@dimen/item_small_height"
+        android:layout_height="@dimen/item_small_height"
+        android:background="@drawable/btn_photo_rotate"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:visibility="gone"
+        android:onClick="onButtonClick"/>
+
+</RelativeLayout>

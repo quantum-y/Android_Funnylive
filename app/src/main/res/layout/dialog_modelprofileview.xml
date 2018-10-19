@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	android:id="@+id/rl_modelprofileview"
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	style="@style/layout_mm"
+	android:orientation="vertical">
+
+	<View style="@style/layout_m0"/>
+
+	<RelativeLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content">
+
+		<View
+			android:layout_width="match_parent"
+			android:layout_height="@dimen/explorer_item_circle_height_half"
+			android:layout_marginTop="@dimen/explorer_item_circle_height_half"
+			android:background="@color/buy_choco_bg_color"/>
+
+        <com.coco.livestreaming.app.ui.view.CircleImageView
+            android:id="@+id/imgModelProfilePhoto"
+            android:layout_width="@dimen/explorer_item_circle_height"
+            android:layout_height="@dimen/explorer_item_circle_height"
+            android:src="@drawable/no_image"
+            android:layout_centerInParent="true" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/explorer_item_circle_height"
+            android:gravity="bottom">
+            <LinearLayout
+                style="@style/layout_0w"
+                android:orientation="vertical"
+                android:gravity="center">
+                <TextView
+                    android:id="@+id/btn_force_out_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/text_size_14"
+                    android:textColor="@color/gray_5f"
+                    android:layout_centerVertical="true"
+                    android:drawableTop="@drawable/ic_report"
+                    android:text="@string/user_report_kr" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1"/>
+
+            <LinearLayout
+                style="@style/layout_0w"
+                android:orientation="vertical"
+                android:gravity="center">
+                <TextView
+                    android:id="@+id/btn_get_my_vip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/text_size_14"
+                    android:textColor="@color/orange_color"
+                    android:layout_centerVertical="true"
+                    android:drawableTop="@drawable/ic_vip"
+                    android:text="@string/profile_user_vip" />
+            </LinearLayout>
+        </LinearLayout>
+        <ImageButton
+            android:id="@+id/btn_profile_close_id"
+            style="@style/layout_ww"
+            android:layout_marginTop="@dimen/explorer_item_circle_height_half"
+            android:background="@drawable/ic_close_light_gray"
+            android:layout_alignParentEnd="true"
+            android:contentDescription="@string/hello_world"/>
+	</RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/buy_choco_bg_color"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+        <LinearLayout
+            style="@style/layout_ww"
+            android:gravity="center"
+            android:visibility="gone">
+            <TextView
+                android:id="@+id/txt_profile_username_id"
+                style="@style/layout_ww"
+                android:layout_marginTop="@dimen/margin_normal"
+                android:text="@string/hello_world"
+                android:textSize="@dimen/text_size_12"
+                android:textStyle="bold"
+                android:textColor="@color/gray_5f"/>
+            <TextView
+                android:id="@+id/txt_rank_id"
+                style="@style/layout_ww"
+                android:layout_marginTop="@dimen/margin_normal"
+                android:layout_marginLeft="@dimen/margin_normal"
+                android:textSize="@dimen/text_size_10"
+                android:textColor="@color/gray_5f"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                style="@style/layout_0w"
+                android:lines="1"
+                android:gravity="center"
+                android:textColor="@color/gray_c9"
+                android:textSize="@dimen/text_size_12"
+                android:text="@string/user_report_en"
+                android:id="@+id/textView" />
+
+            <TextView
+                android:id="@+id/txt_profile_userid_id"
+                style="@style/layout_0w"
+                android:layout_marginTop="@dimen/margin_normal"
+                android:lines="1"
+                android:gravity="center"
+                android:textColor="@color/gray_5f"
+                android:textSize="@dimen/text_size_12"
+                android:text="@string/test_userid"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/txt_get_my_vip"
+                style="@style/layout_0w"
+                android:lines="1"
+                android:gravity="center"
+                android:textColor="@color/orange_color"
+                android:textSize="@dimen/text_size_12"
+                android:text="@string/profile_user_get_my_vip"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/txt_level_id"
+            android:layout_width="@dimen/profile_level_width"
+            android:layout_height="@dimen/profile_level_height"
+            android:background="@drawable/round_bg_light_gray"
+            android:drawableStart="@drawable/ic_medal_small"
+            android:paddingStart="@dimen/margin_small"
+            android:paddingEnd="@dimen/margin_small"
+            android:layout_marginTop="@dimen/margin_normal"
+            android:textColor="@color/black_color"
+            android:textSize="@dimen/text_size_10"
+            android:text="Lv.0"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/txt_location_id"
+            style="@style/layout_ww"
+            android:layout_marginTop="@dimen/margin_normal"
+            android:drawableStart="@drawable/ic_location"
+            android:drawablePadding="@dimen/margin_normal"
+            android:textColor="@color/gray_5f"
+            android:textSize="@dimen/text_size_10"/>
+
+        <LinearLayout
+            style="@style/layout_mw"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/margin_normal"
+            android:gravity="center">
+            <TextView
+                android:id="@+id/txt_send_bana_id"
+                style="@style/layout_ww"
+                android:drawableStart="@drawable/ic_egg"
+                android:drawablePadding="@dimen/margin_normal"
+                android:gravity="center"
+                android:textSize="@dimen/text_size_12"
+                android:textStyle="bold"
+                android:textColor="@color/main_blue_color"/>
+
+            <TextView
+                style="@style/layout_ww"
+                android:text="@string/best_pan"
+                android:textSize="@dimen/text_size_12"
+                android:textStyle="bold"
+                android:layout_marginLeft="@dimen/margin_normal"
+                android:textColor="@color/gray_5f"/>
+            <com.coco.livestreaming.app.ui.view.CircleImageView
+                android:id="@+id/img_fan_first"
+                style="@style/fan_img"
+                android:src="@drawable/no_image"
+                android:layout_marginLeft="@dimen/margin_normal"/>
+            <com.coco.livestreaming.app.ui.view.CircleImageView
+                android:id="@+id/img_fan_second"
+                style="@style/fan_img"
+                android:src="@drawable/no_image"
+                android:layout_marginLeft="@dimen/margin_normal"/>
+            <com.coco.livestreaming.app.ui.view.CircleImageView
+                android:id="@+id/img_fan_third"
+                style="@style/fan_img"
+                android:src="@drawable/no_image"
+                android:layout_marginLeft="@dimen/margin_normal"/>
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/layout_mw"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/margin_normal"
+            android:gravity="center">
+            <TextView
+                style="@style/layout_ww"
+                android:text="@string/str_oneself_introduce"
+                android:textSize="@dimen/text_size_12"
+                android:textStyle="bold"
+                android:textColor="@color/gray_5f"/>
+            <TextView
+                android:id="@+id/txt_oneself_introduce_id"
+                style="@style/layout_ww"
+                android:layout_marginLeft="@dimen/margin_normal"
+                android:text="@string/str_oneself_introduce_empty"
+                android:textSize="@dimen/text_size_12"
+                android:lines="1"
+                android:textColor="@color/gray_5f"/>
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/layout_mw"
+            android:id="@+id/lay_bottom_tool_bar"
+            android:layout_margin="@dimen/margin_normal">
+            <Button
+                android:id="@+id/btn_follow_id"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/item_ex_small_height"
+                android:layout_weight="1"
+                android:background="@drawable/round_bg_orange"
+                android:gravity="center"
+                android:textSize="@dimen/text_size_12"
+                android:text="@string/user_follow"
+                android:textColor="@color/gray_5f"/>
+            <Button
+                android:id="@+id/btn_unfollow_id"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/item_ex_small_height"
+                android:layout_weight="1"
+                android:background="@drawable/round_bg_red_gradient"
+                android:gravity="center"
+                android:textSize="@dimen/text_size_12"
+                android:text="@string/user_unfollow"
+                android:textColor="@color/white"
+                android:visibility="gone"/>
+            <View
+                android:layout_width="3dp"
+                android:layout_height="match_parent"/>
+
+            <Button
+                android:id="@+id/btn_chat_id"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/item_ex_small_height"
+                android:layout_weight="1"
+                android:background="@drawable/round_bg_no_border_blue"
+                android:gravity="center"
+                android:textSize="@dimen/text_size_12"
+                android:text="@string/user_chat"
+                android:textColor="@color/main_blue_color"/>
+            <View
+                android:layout_width="3dp"
+                android:layout_height="match_parent"/>
+
+            <Button
+                android:id="@+id/btn_invite_id"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/item_ex_small_height"
+                android:layout_weight="1"
+                android:background="@drawable/round_bg_red_gradient"
+                android:gravity="center"
+                android:textSize="@dimen/text_size_12"
+                android:text="@string/user_invite"
+                android:textColor="@color/white"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

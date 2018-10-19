@@ -1,0 +1,65 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"   
+    android:layout_height="match_parent">
+    
+    <!--<RelativeLayout
+        android:id="@+id/rl_top_bar"
+        android:background="@drawable/first_top_bar_bg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textStyle="bold"
+            android:textSize="@dimen/top_bar_text_size"
+            android:text="@string/notice_title"/>
+        
+        <ImageButton
+            android:id="@+id/imgBtn_Back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_profile_back_bg"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft= "10dp"
+            android:layout_alignParentLeft="true"/>
+        
+    </RelativeLayout>
+    
+    <LinearLayout android:layout_width="match_parent"
+        		  android:orientation="vertical"
+    			  android:id="@+id/linearLayout1" 
+    			  android:layout_height="match_parent"
+    			  android:background="@drawable/bottom_back">
+	
+        <LinearLayout
+            android:id="@+id/contentbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="#EEE">
+
+            <ListView
+                android:id="@+id/contentList"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+            </ListView>
+
+            <TextView
+		        android:id="@+id/lbNoticeListNoDatas"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:textColor="@color/black_color"
+		        android:text="@string/no_datas"
+		        android:layout_gravity="center"
+		        android:visibility="gone"
+		        android:textSize="@dimen/item_playing_bj_nm"/>
+            
+        </LinearLayout>
+
+    </LinearLayout>-->
+  
+</LinearLayout>

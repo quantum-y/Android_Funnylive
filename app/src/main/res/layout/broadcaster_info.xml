@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="@dimen/broadcast_info_width"
+    android:layout_height="@dimen/broadcast_info_height" >
+    <ImageView
+        android:layout_width="@dimen/broadcast_info_width"
+        android:layout_height="@dimen/broadcast_info_height"
+        android:background="@drawable/avatar_outline_chat"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/broadcast_padding_left"
+        android:layout_marginEnd="@dimen/broadcast_padding_right"
+        android:layout_marginTop="@dimen/broadcast_padding_top"
+        android:layout_marginBottom="@dimen/broadcast_padding_bottom"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+        <com.coco.livestreaming.app.ui.view.CircleImageView
+            android:id="@+id/img_bj_photo_id"
+            style="@style/user_img_broadcast"
+            android:src="@drawable/no_image"/>
+        <LinearLayout
+            style="@style/layout_ww"
+            android:orientation="horizontal"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp">
+            <TextView
+                android:id="@+id/txt_roomname_id"
+                style="@style/layout_ww"
+                android:maxWidth="95dp"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_10"/>
+
+            <!-- 온나인수-->
+            <TextView
+                android:id="@+id/txt_online_num_id"
+                style="@style/layout_ww"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_10"
+                android:visibility="gone"/>
+
+            <!-- 비제이랭킹바-->
+            <TextView
+                android:id="@+id/txt_heart_rank_id"
+                style="@style/layout_ww"
+                android:textSize="@dimen/text_size_10"
+                android:textColor="@color/white"
+                android:visibility="gone"/>
+        </LinearLayout>
+    </LinearLayout>
+    <ImageView
+        android:layout_width="@dimen/broadcast_info_width"
+        android:layout_height="@dimen/broadcast_info_height"
+        android:background="@drawable/avatar_outline_chat_over"/>
+</RelativeLayout>
+
+

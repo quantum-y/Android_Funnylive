@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <RelativeLayout android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#c0000000"
+        android:id="@+id/vwStatus">
+        <ViewAnimator
+            android:id="@+id/img_loading_ani_id"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/loading"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColorHighlight="@color/white_color"
+            android:textColor="@color/white_color"
+            android:id="@+id/txtStatus"
+            android:layout_centerInParent="true"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_marginBottom="25dip"
+            android:layout_marginLeft="10dip"
+            android:layout_marginTop="10dip"
+            android:layout_marginRight="10dip" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/button_dismiss"
+            android:textColor="@color/black_color"
+            android:id="@+id/btnDismiss"
+            android:visibility="visible"
+            android:layout_below="@+id/txtStatus"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/btn_dialog_bg_golden"
+            android:padding="10dp" />
+    </RelativeLayout>
+</merge>

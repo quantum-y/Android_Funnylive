@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<inset android:insetLeft="1.0px" android:insetRight="1.0px" android:insetTop="1.0px" android:insetBottom="1.0px"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <shape xmlns:android="http://schemas.android.com/apk/res/android">
+        <gradient
+            android:angle="45"
+            android:startColor="@color/app_light_red_color"
+            android:endColor="@color/app_red_color" />
+        <corners android:radius="@dimen/login_btn_size"/>
+    </shape>
+</inset>

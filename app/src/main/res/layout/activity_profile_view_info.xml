@@ -1,0 +1,219 @@
+<LinearLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@id/container"
+    style="@style/layout_mm"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+	<RelativeLayout
+	    style="@style/layout_m0">
+
+		<ImageView
+            android:id="@+id/img_profile"
+            style="@style/layout_mm"
+            android:scaleType="centerCrop"
+            android:background="@drawable/no_image"/>
+
+        <LinearLayout
+            android:id="@+id/bar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/main_top_bar_height"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+            <ImageButton
+                android:id="@+id/img_back_id"
+                android:layout_width="@dimen/btn_profile_width"
+                android:layout_height="@dimen/btn_profile_width"
+                android:src="@drawable/ic_arrow_left_white"
+                android:background="@color/transparent"
+                android:layout_gravity="start|center_vertical"
+                android:contentDescription="@string/action_leave" />
+            <TextView
+                android:id="@+id/txt_profile_username_id"
+                style="@style/layout_0m"
+                android:gravity="center"
+                android:text="@string/user_id"
+                android:textSize="@dimen/text_size_14"
+                android:textColor="@color/white"/>
+            <ImageButton
+                android:id="@+id/btn_profile_edit_id"
+                android:layout_width="@dimen/btn_profile_width"
+                android:layout_height="@dimen/btn_profile_width"
+                android:src="@drawable/ic_edit_profile"
+                android:background="@color/transparent"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:contentDescription="@string/hello_world"/>
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/layout_mw"
+            android:layout_alignParentBottom="true"
+            android:paddingLeft="@dimen/margin_large"
+            android:paddingRight="@dimen/margin_large"
+            android:orientation="vertical">
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="@dimen/margin_large"
+                android:background="@color/white_trans_6_color"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_marginBottom="@dimen/margin_large"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txt_level_id"
+                    android:layout_width="@dimen/profile_level_width"
+                    android:layout_height="@dimen/profile_level_height"
+                    android:background="@drawable/round_bg_blue_border_white"
+                    android:drawableStart="@drawable/ic_medal_small"
+                    android:paddingStart="@dimen/margin_small"
+                    android:paddingEnd="@dimen/margin_small"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/text_size_10"
+                    android:text="Lv.0"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:id="@+id/txt_rank_id"
+                    style="@style/layout_ww"
+                    android:textSize="@dimen/text_size_8"
+                    android:textColor="@color/black_color"
+                    android:textStyle="bold"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="13dp"
+                    android:visibility="invisible"/>
+                <View
+                    style="@style/layout_0m"/>
+
+                <TextView
+                    style="@style/layout_ww"
+                    android:text="@string/best_pan"
+                    android:textSize="@dimen/text_size_10"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"/>
+
+                <RelativeLayout
+                    style="@style/fan_container_RelativeLayout">
+                    <View
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:background="@drawable/btn_white_round"/>
+                    <com.coco.livestreaming.app.ui.view.CircleImageView
+                        android:id="@+id/img_fan_first"
+                        style="@style/fan_img"
+                        android:layout_centerInParent="true"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    style="@style/fan_container_RelativeLayout">
+                    <View
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:background="@drawable/btn_white_round"/>
+                    <com.coco.livestreaming.app.ui.view.CircleImageView
+                        android:id="@+id/img_fan_second"
+                        style="@style/fan_img"
+                        android:layout_centerInParent="true"/>
+                </RelativeLayout>
+                <RelativeLayout
+                    style="@style/fan_container_RelativeLayout">
+                    <View
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:background="@drawable/btn_white_round"/>
+                    <com.coco.livestreaming.app.ui.view.CircleImageView
+                        android:id="@+id/img_fan_third"
+                        style="@style/fan_img"
+                        android:layout_centerInParent="true"/>
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+	</RelativeLayout>
+
+	<LinearLayout
+        style="@style/layout_mw"
+	    android:orientation="vertical">
+        <LinearLayout 
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/item_height"
+            android:baselineAligned="false"
+            android:orientation="horizontal">
+            <LinearLayout
+	            style="@style/layout_0m"
+		    	android:layout_weight="1"
+		    	android:orientation="vertical"
+		    	android:gravity="center">
+	            <TextView
+	                android:id="@+id/txt_friend_num_id"
+	                style="@style/profile_follow_num"/>
+	            <TextView
+	                android:text="@string/str_friend"
+	                style="@style/profile_follow_label"/>
+	        </LinearLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/gray_color"/>
+
+	        <LinearLayout
+	            style="@style/layout_0m"
+		    	android:layout_weight="1"
+		    	android:orientation="vertical"
+		    	android:gravity="center">
+	            <TextView
+	                android:id="@+id/txt_follow_num_id"
+	                style="@style/profile_follow_num"/>
+	            <TextView
+	                android:text="@string/str_following"
+	                style="@style/profile_follow_label"/>
+	        </LinearLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/gray_color"/>
+
+	        <LinearLayout
+	            style="@style/layout_0m"
+		    	android:layout_weight="1"
+		    	android:orientation="vertical"
+		    	android:gravity="center">
+	            <TextView
+	                android:id="@+id/txt_fan_num_id"
+	                style="@style/profile_follow_num"/>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+                    <TextView
+                        android:text="@string/str_fan"
+                        style="@style/profile_follow_label"/>
+                    <TextView
+                        android:text="@string/str_plus_one"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="@dimen/margin_normal"
+                        android:textColor="@color/red_color"
+                        android:textSize="@dimen/text_size_10"/>
+                </LinearLayout>
+	        </LinearLayout>
+        </LinearLayout>
+
+        <View style="@style/splite_line_gray" />
+
+	    <include
+	        style="@style/layout_mw"
+	        layout="@layout/profile_info_bottom" />
+
+    </LinearLayout>
+
+</LinearLayout>

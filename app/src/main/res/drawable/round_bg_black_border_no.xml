@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<inset
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <shape>
+        <stroke android:width="0px" android:color="@color/chat_bgcolor" />
+        <solid  android:color="@color/chat_bgcolor"/>
+        <corners android:radius="15dp" />
+    </shape>
+</inset>
+

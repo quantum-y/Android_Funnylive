@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/layItem"
+        android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
+    	android:layout_height="wrap_content" 
+    	android:background="#B9B8B8"
+    	android:paddingTop="1px"
+    	android:paddingBottom="1px">
+    	
+		<RelativeLayout
+            android:id="@+id/layThemeName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" 
+            android:background="#FFFFFF"
+            android:padding="3px">
+
+		    <ImageView
+		        android:id="@+id/imgPhoto"
+		        android:layout_width="100dp"
+		        android:layout_height="100dp" 
+		        android:background="@drawable/no_image"
+		        android:layout_alignParentLeft="true"
+		        android:layout_marginLeft="10dp"
+		        android:layout_centerVertical="true"
+		        android:padding="2dp"
+		        android:scaleType="fitXY"/>
+			 
+		    <LinearLayout
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_marginLeft="20dp"
+		        android:layout_marginRight="5dp"
+		        android:orientation="vertical"
+		        android:layout_centerVertical="true"
+		        android:weightSum="2"
+		        android:layout_toRightOf="@+id/imgPhoto">
+		    
+		        <TextView
+			        android:id="@+id/lbNoticeAuthor"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_centerVertical="true"
+			        android:textStyle="bold"
+			        android:textColor="@color/black_color"
+			        android:text="@string/playing_item_bj_name"
+			        android:textSize="@dimen/item_playing_bj_nm"/>
+		    
+	            <TextView
+	                android:id="@+id/lbNoticeTitle"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_weight="1"
+	                android:textColor="@color/gray_color"
+	                android:text="@string/playing_item_id_name"
+	                android:textSize="@dimen/item_playing_bj_nm"/>
+	            
+	            <TextView
+	                android:id="@+id/lbNoticeContent"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_weight="1"
+	                android:textColor="@color/gray_color"
+	                android:textSize="@dimen/item_playing_id_nm"/>
+		          
+		    </LinearLayout>
+		    
+		</RelativeLayout>     	
+    </RelativeLayout>
+</RelativeLayout>

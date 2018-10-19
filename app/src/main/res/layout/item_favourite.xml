@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/item_height_favourite"
+    android:paddingStart="20dp"
+    android:paddingEnd="20dp"
+    android:background="@color/white_color">
+
+	<View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/green_color1"
+        android:layout_marginStart="10dp"
+        android:layout_alignParentBottom="true"/>
+
+	<LinearLayout
+	    style="@style/layout_ww"
+		android:orientation="horizontal"
+		android:layout_centerVertical="true"
+		android:layout_alignParentStart="true">
+	    <RelativeLayout style="@style/layout_wm">
+		    <ImageView
+		        android:layout_width="@dimen/favourite_circleStroke_radius"
+		        android:layout_height="@dimen/favourite_circleStroke_radius"
+		        android:background="@drawable/shape_circle_border_thin_green"
+		        android:layout_centerInParent="true"
+		        android:contentDescription="@string/hello_world"/>
+		    <com.coco.livestreaming.app.ui.view.CircleImageView
+				android:id="@+id/imgPhoto"
+			    android:layout_width="@dimen/favourite_circleImage_radius"
+			    android:layout_height="@dimen/favourite_circleImage_radius"
+			    android:src="@drawable/no_image"
+			    android:layout_centerInParent="true"/>
+
+		</RelativeLayout>
+
+	    <RelativeLayout
+	        style="@style/layout_mm"
+	        android:layout_marginStart="15dp"
+	        android:orientation="vertical">
+	        <TextView
+	            android:id="@+id/txt_username_id"
+	            style="@style/fan_list_info"
+	            android:textSize="@dimen/text_size_16"
+				android:textStyle="bold"
+	            android:layout_alignParentTop="true"
+	            android:text="@string/test_userid"/>
+	        <TextView
+	            android:id="@+id/txt_location_id"
+	            style="@style/fan_list_info"
+	            android:textSize="@dimen/text_size_14"
+	            android:text="@string/test_location"
+	            android:drawableStart="@drawable/ic_location_green"
+	            android:drawablePadding="8dp"
+	            android:layout_centerVertical="true"/>
+	        <TextView
+	            android:id="@+id/tvOnLine"
+	            style="@style/fan_list_info"
+	            android:text="@string/test_value"
+	            android:textSize="@dimen/text_size_14"
+	            android:layout_alignParentBottom="true"/>
+	    </RelativeLayout>
+	</LinearLayout>
+</RelativeLayout>

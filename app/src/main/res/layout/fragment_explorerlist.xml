@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/layout_mm"
+    tools:context=".app.ui.activity.MainActivity"
+    android:orientation="vertical">
+
+    <ListView
+        android:id="@+id/lv_ExploreList"
+        style="@style/layout_m0"
+        android:divider="@color/transparent"
+        android:scrollbars="none"/>
+    <View
+        android:id="@+id/temp_bottom_view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/home_bottom_view_height"
+        android:visibility="gone"/>
+</LinearLayout>

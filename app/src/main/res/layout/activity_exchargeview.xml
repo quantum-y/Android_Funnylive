@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/dialog_favourite" 
+    xmlns:android="http://schemas.android.com/apk/res/android" 
+    style="@style/layout_mm"
+    android:orientation="horizontal"
+	android:background="@drawable/bg_profile">
+    <FrameLayout style="@style/layout_0m" />
+    <LinearLayout 
+        android:layout_width="0dp"
+        android:layout_weight="7"
+	    android:layout_height="wrap_content"
+	    android:orientation="vertical"
+	    android:background="@color/white_color"
+	    android:layout_gravity="center_vertical">
+	    <RelativeLayout style="@style/layout_mw">
+		    <TextView 
+		   		android:layout_width="match_parent"
+		   		android:layout_height="@dimen/item_small_height"
+		   		android:text="@string/excharge_into"
+		   		android:background="@color/golden_color"
+		   		android:textColor="@color/green_color1"
+		   		android:textStyle="bold"
+		   		android:textSize="@dimen/text_size_18"
+		   		android:gravity="center"
+		   		android:paddingStart="10dp"
+		   		android:paddingEnd="10dp"/>
+		    <ImageButton
+		        android:id="@+id/btn_cancel" 
+		        style="@style/layout_ww"
+		        android:background="@drawable/ic_close_green"
+		        android:layout_centerVertical="true"
+		        android:layout_alignParentEnd="true"
+		        android:contentDescription="@string/hello_world"/>
+	   	</RelativeLayout>
+	   	<LinearLayout 
+	   	    style="@style/layout_mw"
+	   	    android:orientation="vertical">
+	   	    <LinearLayout
+		   	    style="@style/layout_mw"
+		   	    android:orientation="vertical"
+		   	    android:paddingStart="25dp"
+		   	    android:paddingEnd="25dp">
+		   	    <LinearLayout style="@style/excharge_edit_info_row" android:baselineAligned="false">
+			        
+			        <FrameLayout style="@style/layout_0m">
+			            <TextView
+				            android:text="@string/excharge_username"
+				            style="@style/excharge_row_label"/>
+			        </FrameLayout>
+			        <RelativeLayout
+			            style="@style/layout_0m"
+			            android:layout_weight="2">
+			            <TextView
+			                android:id="@+id/lb_model_nm"
+			                style="@style/layout_mm"
+			                android:text="@string/test_userid"
+			                android:textColor="@color/green_color"
+			                android:textSize="@dimen/text_size_16"
+			                android:textStyle="bold"
+			                android:gravity="bottom"/>
+			            <View style="@style/splite_line2" android:layout_alignParentBottom="true"/>
+			        </RelativeLayout>
+			    </LinearLayout>
+			    
+			    <LinearLayout style="@style/excharge_edit_info_row" android:baselineAligned="false">
+			        <FrameLayout style="@style/layout_0m">
+			            <TextView
+				            android:text="@string/excharge_banana_amount"
+				            style="@style/excharge_row_label"/>
+			        </FrameLayout>
+			        <RelativeLayout 
+			            style="@style/layout_0m"
+			            android:layout_weight="2">
+			            <EditText
+			                android:id="@+id/lb_model_money"
+			                style="@style/excharge_setting_edit_box"
+							android:inputType="number"
+			                android:hint="@string/warning_max_banana_count"
+			                android:gravity="bottom|end"/>
+			            
+			            <View style="@style/splite_line2" android:layout_alignParentBottom="true"/>
+			        </RelativeLayout>
+			    </LinearLayout>
+			    
+			    <LinearLayout style="@style/excharge_edit_info_row" android:baselineAligned="false">
+			        <FrameLayout style="@style/layout_0m" />
+			        <RelativeLayout 
+			            style="@style/layout_0m"
+			            android:layout_weight="2">
+			            <TextView
+			                android:id="@+id/tv_model_money"
+			                android:text="@string/str_choco_charge_price"
+			                style="@style/excharge_setting_edit_box"
+							android:textColor="@color/gray_9"
+			                android:gravity="bottom|end"/>
+			            
+			            <View style="@style/splite_line2" android:layout_alignParentBottom="true"/>
+			        </RelativeLayout>
+			    </LinearLayout>
+			    
+			    <LinearLayout style="@style/excharge_edit_info_row" android:baselineAligned="false">
+			        <FrameLayout style="@style/layout_0m">
+			            <TextView
+				            android:text="@string/excharge_bankername"
+				            style="@style/excharge_row_label"/>
+			        </FrameLayout>
+			        <RelativeLayout 
+			            style="@style/layout_0m"
+			            android:layout_weight="2">
+			            <EditText
+			                android:id="@+id/et_bankname"
+			                style="@style/excharge_setting_edit_box"
+			                android:hint="@string/excharge_bankername_hint"/>
+			            <View style="@style/splite_line2" android:layout_alignParentBottom="true"/>
+			        </RelativeLayout>
+			    </LinearLayout>
+			    
+			   	<LinearLayout style="@style/excharge_edit_info_row" android:baselineAligned="false">
+			        <FrameLayout style="@style/layout_0m">
+			            <TextView
+				            android:text="@string/excharge_accountnum"
+				            style="@style/excharge_row_label"/>
+			        </FrameLayout>
+			        <RelativeLayout 
+			            style="@style/layout_0m"
+			            android:layout_weight="2">
+			            <EditText
+			                android:id="@+id/et_accountnum"
+			                style="@style/excharge_setting_edit_box"
+			                android:hint="@string/excharge_accountnum_hint"/>
+			            <View style="@style/splite_line2" android:layout_alignParentBottom="true"/>
+			        </RelativeLayout>
+			    </LinearLayout>
+		   	</LinearLayout>
+	   	    <LinearLayout 
+	   	        style="@style/layout_mw"
+		        android:paddingStart="10dp"
+		        android:paddingEnd="10dp"
+		        android:layout_marginTop="10dp"
+		        android:orientation="horizontal">
+		        <FrameLayout 
+		            style="@style/layout_0w">
+		            <ImageView 
+		                android:id="@+id/img_sinbun"
+		                android:layout_width="match_parent"
+		                android:layout_height="@dimen/excharge_image_height"
+		                android:background="@drawable/img_excharge_add_photo"
+		                android:scaleType="fitXY"
+		                android:contentDescription="@string/hello_world"/>
+		        </FrameLayout>
+		        <View android:layout_width="6dp" android:layout_height="match_parent"/>
+		        <FrameLayout 
+		            style="@style/layout_0w">
+		            <ImageView 
+		                android:id="@+id/img_tongjang"
+		                android:layout_width="match_parent"
+		                android:layout_height="@dimen/excharge_image_height"
+		                android:background="@drawable/img_excharge_add_tax"
+		                android:scaleType="fitXY"
+		                android:contentDescription="@string/hello_world"/>
+		        </FrameLayout>
+	   	    </LinearLayout>
+	   	    <RelativeLayout 
+	   	        style="@style/layout_mw">
+	   	        <Button
+			        android:id="@+id/btnExchargeOk"
+			        style="@style/layout_ww"
+			        android:background="@drawable/btn_exchange"
+			        android:text="@string/excharge_start"
+			        android:textSize="@dimen/text_size_16"
+			        android:textStyle="bold"
+			        android:textColor="@color/green_color"
+			        android:contentDescription="@string/hello_world"
+			        android:layout_centerInParent="true"
+			        android:layout_marginTop="20dp"/>
+	   	    </RelativeLayout>
+	   	</LinearLayout>
+    </LinearLayout>
+    <FrameLayout style="@style/layout_0m"/>
+</LinearLayout>

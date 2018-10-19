@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	style="@style/layout_mm"
+	tools:context=".app.ui.activity.MainActivity"
+	android:background="@color/white"
+	android:orientation="vertical">
+	<LinearLayout
+		android:id="@+id/bar"
+		android:layout_width="match_parent"
+		android:layout_height="@dimen/btn_profile_width"
+		android:gravity="center_vertical"
+		android:orientation="horizontal">
+		<ImageButton
+			android:id="@+id/imgBtn_Back"
+			android:layout_width="@dimen/btn_profile_width"
+			android:layout_height="@dimen/btn_profile_width"
+			android:src="@drawable/ic_arrow_left"
+			android:background="@color/transparent"
+			android:layout_gravity="start|center_vertical"
+			android:contentDescription="@string/action_leave"
+            android:onClick="onButtonClick"/>
+		<TextView
+			android:id="@+id/tvExploreDetailTitle"
+			style="@style/layout_ww"
+			android:gravity="center"
+			android:textSize="@dimen/text_size_14"
+			android:textColor="@color/black_color" />
+	</LinearLayout>
+
+    <GridView
+        android:id="@+id/gv_model_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginStart="-4dp"
+        android:layout_marginEnd="-4dp"
+        android:layout_marginTop="-4dp"
+        android:layout_marginBottom="-4dp"
+        android:horizontalSpacing="@dimen/margin_tiny"
+        android:verticalSpacing="@dimen/margin_tiny"
+        android:numColumns="2"
+        android:scrollbars="none"
+        tools:listitem="@layout/item_explore_detail"/>
+
+    <LinearLayout
+        android:id="@+id/layoutNoDatas"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_no_video" />
+        <Button
+            android:id="@+id/btn_refresh"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/btn_login_height"
+            android:background="@drawable/round_bg_white_border_gray"
+            android:layout_marginTop="@dimen/margin_normal"
+            android:layout_marginLeft="@dimen/padding_login_screen"
+            android:layout_marginRight="@dimen/padding_login_screen"
+            android:text="@string/refresh"
+            android:textColor="@color/gray_cc"
+            android:textSize="@dimen/text_size_14" />
+    </LinearLayout>
+
+</LinearLayout>

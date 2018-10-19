@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <array name="username_colors">
+        <item>@color/username0</item>
+        <item>@color/username1</item>
+        <item>@color/username2</item>
+        <item>@color/username3</item>
+        <item>@color/username4</item>
+        <item>@color/username5</item>
+        <item>@color/username6</item>
+        <item>@color/username7</item>
+        <item>@color/username8</item>
+        <item>@color/username9</item>
+        <item>@color/username10</item>
+        <item>@color/username11</item>
+        <item>@color/username12</item>
+    </array>
+	<string-array name="select_upload_dialog_items">
+        <item>Take a photo</item>
+        <item>Choose from gallery</item>
+    </string-array>
+	<array name="level_colors">
+        <item>@color/level_0_color</item>
+        <item>@color/level_1_color</item>
+        <item>@color/level_2_color</item>
+        <item>@color/level_3_color</item>
+    </array>
+
+    <!--바나나충진 관련변수-->
+    <array name="arr_egg_charge_count">
+        <item>1</item>
+        <item>10</item>
+        <item>100</item>
+        <item>1000</item>
+        <item>10000</item>
+    </array>
+
+    <string-array name="arr_str_egg_charge_count">
+        <item>1</item>
+        <item>10</item>
+        <item>100</item>
+        <item>1000</item>
+        <item>10000</item>
+    </string-array>
+
+    <array name="arr_egg_charge_price">
+        <item>100</item>
+        <item>1000</item>
+        <item>10000</item>
+        <item>100000</item>
+        <item>1000000</item>
+    </array>
+
+    <!-- 경매시간설정관련 -->
+    <string-array name="arr_auction_hour">
+        <item>1</item>
+        <item>3</item>
+        <item>6</item>
+        <item>12</item>
+        <item>24</item>
+    </string-array>
+
+</resources>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <ImageView
+        android:id="@+id/img_bg"
+        style="@style/layout_mm"
+        android:src="@drawable/no_image"
+        android:scaleType="centerCrop"/>
+
+	<LinearLayout
+		style="@style/layout_mm"
+		android:orientation="vertical"
+        android:background="@color/black_trans_7_color">
+		<ImageButton
+			android:id="@+id/imgBtnClose"
+			android:layout_width="@dimen/btn_profile_width"
+			android:layout_height="@dimen/btn_profile_width"
+			android:layout_marginTop="@dimen/margin_normal"
+			android:layout_marginLeft="@dimen/margin_normal"
+			android:src="@drawable/ic_arrow_left_white"
+			android:background="@color/transparent"
+			android:layout_gravity="start|center_vertical"
+			android:contentDescription="@string/action_leave" />
+
+		<RelativeLayout
+			android:layout_width="@dimen/setting_item_circle_height"
+			android:layout_height="@dimen/setting_item_circle_height"
+			android:layout_gravity="center_horizontal"
+			android:layout_marginTop="@dimen/setting_item_margine_top_height">
+			<com.coco.livestreaming.app.ui.view.CircleImageView
+				android:id="@+id/imgCover"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:layout_margin="@dimen/margin_normal"
+				android:src="@drawable/no_image"
+				android:layout_centerInParent="true" />
+			<ImageView
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:layout_centerInParent="true"
+				android:background="@drawable/circle_border_blue"/>
+		</RelativeLayout>
+		<EditText
+			android:id="@+id/etBroadCastTitle"
+			android:layout_width="@dimen/setting_title_width"
+			android:layout_height="@dimen/setting_title_height"
+			android:layout_marginTop="@dimen/setting_title_margin_top"
+			android:hint="@string/setting_title"
+			android:background="@drawable/underline_blue"
+			android:layout_gravity="center"
+			android:textColor="@color/white_color"
+			android:textColorHint="@color/white_trans_6_color"
+			android:textSize="@dimen/text_size_14"
+			android:inputType="text"
+			android:gravity="center"/>
+		<Button
+			android:id="@+id/imgBtnBroadCastSetting"
+			android:layout_width="@dimen/btn_ok_width"
+			android:layout_height="@dimen/btn_ok_height"
+			android:text="@string/broadcast_category"
+			android:textSize="@dimen/text_size_14"
+			android:background="@drawable/btn_white_round"
+			android:layout_marginTop="@dimen/margin_large"
+			android:layout_gravity="center"/>
+
+		<RelativeLayout
+			style="@style/layout_mm">
+			<ImageButton
+				android:id="@+id/btn_start"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_centerInParent="true"
+				android:background="@drawable/btn_start_broadcast"/>
+			<TextView
+				style="@style/layout_ww"
+				android:layout_below="@+id/btn_start"
+				android:text="@string/broadcast_start"
+				android:textSize="@dimen/text_size_16"
+				android:textStyle="bold"
+				android:textColor="@color/golden_color"
+				android:layout_centerHorizontal="true"
+				android:layout_marginTop="5dp" />"
+		</RelativeLayout>
+	</LinearLayout>
+
+</FrameLayout>

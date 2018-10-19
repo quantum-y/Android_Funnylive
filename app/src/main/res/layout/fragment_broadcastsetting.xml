@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@id/container"
+    style="@style/layout_mm">
+
+    <ImageView
+        android:id="@+id/img_bg"
+        style="@style/layout_mm"
+        android:src="@drawable/no_image"
+        android:scaleType="centerCrop"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black_trans_7_color" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageButton
+            android:id="@+id/btnSettingBack"
+            android:layout_width="@dimen/btn_profile_width"
+            android:layout_height="@dimen/btn_profile_width"
+            android:src="@drawable/ic_arrow_left_white"
+            android:background="@color/transparent"
+            android:layout_gravity="start|center_vertical"
+            android:contentDescription="@string/action_leave" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="@dimen/margin_large"
+            android:layout_marginRight="@dimen/margin_large"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/margin_large"
+                    android:background="@drawable/round_bg_black_trans_border_whtie"
+                    android:orientation="vertical"
+                    android:gravity="center">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size_14"
+                        android:text="@string/setting_category"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <LinearLayout
+                            style="@style/layout_0m"
+                            android:gravity="center">
+                            <ToggleButton
+                                android:id="@+id/btnMusic"
+                                style="@style/category_toggle_button"
+                                android:checked="true"
+                                android:drawableTop="@drawable/btn_cate_music"
+                                android:textOn="@string/category_music"
+                                android:textOff="@string/category_music"/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            style="@style/layout_0m"
+                            android:gravity="center">
+                            <ToggleButton
+                                android:id="@+id/btnGame"
+                                style="@style/category_toggle_button"
+                                android:drawableTop="@drawable/btn_cate_game"
+                                android:textOn="@string/category_game"
+                                android:textOff="@string/category_game"/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            style="@style/layout_0m"
+                            android:gravity="center">
+                            <ToggleButton
+                                android:id="@+id/btnLife"
+                                style="@style/category_toggle_button"
+                                android:drawableTop="@drawable/btn_cate_life"
+                                android:textOn="@string/category_life"
+                                android:textOff="@string/category_life"/>
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/item_small_height"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        style="@style/category_label"
+                        android:text="@string/setting_quality"/>
+
+                    <ToggleButton
+                        android:id="@+id/btnHigh"
+                        style="@style/category_toggle_button"
+                        android:checked="false"
+                        android:onClick="onButtonClick"
+                        android:textOff="@string/category_high"
+                        android:textOn="@string/category_high"
+                        android:layout_marginLeft="@dimen/margin_normal"/>
+                    <ToggleButton
+                        android:id="@+id/btnMid"
+                        style="@style/category_toggle_button"
+                        android:checked="true"
+                        android:onClick="onButtonClick"
+                        android:textOff="@string/category_mid"
+                        android:textOn="@string/category_mid"
+                        android:layout_marginLeft="@dimen/margin_normal"/>
+                    <ToggleButton
+                        android:id="@+id/btnLow"
+                        style="@style/category_toggle_button"
+                        android:checked="false"
+                        android:onClick="onButtonClick"
+                        android:textOff="@string/category_low"
+                        android:textOn="@string/category_low"
+                        android:layout_marginLeft="@dimen/margin_normal"/>
+                </LinearLayout>
+
+                <View style="@style/splite_line" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/item_small_height">
+                    <TextView
+                        style="@style/layout_ww"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size_14"
+                        android:text="@string/category_19"
+                        android:drawableStart="@drawable/ic_adult"
+                        android:drawablePadding="8dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:gravity="center_vertical"/>
+                    <ToggleButton
+                        android:id="@+id/btnAdult"
+                        android:layout_width="@dimen/setting_title_height"
+                        android:layout_height="@dimen/setting_title_height"
+                        android:background="@drawable/ic_toggle"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:checked="true"
+                        android:onClick="onButtonClick"
+                        android:textOff=""
+                        android:textOn=""/>
+                </RelativeLayout>
+
+                <View style="@style/splite_line" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/item_small_height">
+                    <TextView
+                        style="@style/layout_ww"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size_14"
+                        android:text="@string/category_muti"
+                        android:textStyle="bold"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:gravity="center_vertical"/>
+
+                    <ImageButton
+                        android:id="@+id/btnArrow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/ic_arrow_right_mid"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:contentDescription="@string/hello_world"/>
+                </RelativeLayout>
+
+                <View style="@style/splite_line" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/item_multi_height"
+                    android:orientation="horizontal">
+                    <LinearLayout
+                        style="@style/layout_0m"
+                        android:layout_weight="1">
+                        <TextView
+                            style="@style/category_label"
+                            android:text="@string/setting_password"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/layout_0m"
+                        android:layout_weight="2"
+                        android:orientation="vertical"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp">
+
+                        <EditText
+                            android:id="@+id/edit_password"
+                            style="@style/layout_m0"
+                            android:textSize="@dimen/text_size_12"
+                            android:textColor="@color/white"
+                            android:textColorHint="@color/white_trans_6_color"
+                            android:inputType="textPassword"
+                            android:gravity="center"
+                            android:background="@drawable/round_bg_black_trans_border_whtie"
+                            android:hint="@string/set_room_password"
+                            android:paddingLeft="@dimen/margin_normal"
+                            android:paddingRight="@dimen/margin_normal"/>
+
+                        <EditText
+                            android:id="@+id/edit_password_repeat"
+                            style="@style/layout_m0"
+                            android:layout_marginTop="@dimen/margin_small"
+                            android:textSize="@dimen/text_size_12"
+                            android:textColor="@color/white"
+                            android:textColorHint="@color/white_trans_6_color"
+                            android:inputType="textPassword"
+                            android:gravity="center"
+                            android:background="@drawable/round_bg_black_trans_border_whtie"
+                            android:hint="@string/set_room_password_again"
+                            android:paddingLeft="@dimen/margin_normal"
+                            android:paddingRight="@dimen/margin_normal"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <View style="@style/splite_line" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/item_small_height"
+                    android:orientation="horizontal"
+                    android:baselineAligned="false"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp">
+                    <LinearLayout
+                        style="@style/layout_0m"
+                        android:layout_weight="1">
+                        <TextView
+                            style="@style/category_label"
+                            android:text="@string/setting_choco_cnt"/>
+                    </LinearLayout>
+
+                    <EditText
+                        android:id="@+id/et_setting_choco_cnt"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        style="@style/edit_box_number"
+                        android:background="@drawable/round_bg_black_trans_border_whtie"
+                        android:maxEms="3"
+                        android:inputType="number"
+                        android:hint="@string/entre_live_banana_hint"
+                        android:gravity="right|center_vertical"
+                        android:paddingLeft="@dimen/margin_normal"
+                        android:paddingRight="@dimen/margin_normal"/>
+                </LinearLayout>
+
+                <View style="@style/splite_line" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/item_small_height"
+                    android:orientation="horizontal"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp">
+                    <LinearLayout
+                        style="@style/layout_0m"
+                        android:layout_weight="1">
+                        <TextView
+                            style="@style/category_label"
+                            android:text="@string/setting_room_num"/>
+                    </LinearLayout>
+
+                    <EditText
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:id="@+id/et_setting_member_num"
+                        style="@style/edit_box_number"
+                        android:background="@drawable/round_bg_black_trans_border_whtie"
+                        android:maxEms="5"
+                        android:inputType="number"
+                        android:hint="@string/entre_user_count_hint"
+                        android:gravity="right|center_vertical"
+                        android:paddingLeft="@dimen/margin_normal"
+                        android:paddingRight="@dimen/margin_normal"/>
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <Button
+                        android:id="@+id/btnSettingConfrim"
+                        android:layout_width="@dimen/btn_ok_width"
+                        android:layout_height="@dimen/item_small_height"
+                        android:background="@drawable/round_bg_orange"
+                        android:text="@string/confirm"
+                        android:textSize="@dimen/text_size_14"
+                        android:layout_marginTop="@dimen/setting_title_margin_top"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_centerInParent="true"/>
+                </RelativeLayout>
+            </LinearLayout>
+        </ScrollView>
+
+
+    </LinearLayout>
+
+
+</FrameLayout>

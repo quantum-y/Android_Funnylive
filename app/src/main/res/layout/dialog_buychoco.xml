@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/dialog_buychoco"
+    xmlns:android="http://schemas.android.com/apk/res/android" 
+    style="@style/layout_mm">
+
+	<LinearLayout
+	    style="@style/layout_mw"
+        android:orientation="vertical"
+		android:layout_alignParentBottom="true"
+		android:layout_centerHorizontal="true">
+		<ImageView 
+		    style="@style/layout_mw"
+		    android:background="@drawable/img_choco_header"
+		    android:contentDescription="@string/hello_world" />
+		<LinearLayout 
+		    style="@style/layout_mw"
+		    android:background="@color/buy_choco_bg_color"
+		    android:orientation="vertical">
+
+            <ListView
+	            android:id="@+id/list_banana"
+	            android:layout_width="match_parent"
+	            android:layout_height="@dimen/buy_choco_list_height"
+				android:scrollbars="none"
+                android:background="@color/transparent"
+				android:divider="@color/transparent"/>
+
+            <LinearLayout
+                style="@style/layout_mw"
+                android:padding="@dimen/margin_normal">
+                <Button
+                    android:id="@+id/btn_charge"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/item_ex_small_height"
+                    android:layout_weight="1"
+                    android:background="@drawable/round_bg_orange"
+                    android:gravity="center"
+                    android:textSize="@dimen/text_size_12"
+                    android:text="@string/choco_charge_btn"
+                    android:textColor="@color/gray_5f"/>
+                <View
+                    android:layout_width="3dp"
+                    android:layout_height="match_parent"/>
+                <Button
+                    android:id="@+id/btn_choco_cancel"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/item_ex_small_height"
+                    android:layout_weight="1"
+                    android:background="@drawable/round_bg_no_border_gray"
+                    android:gravity="center"
+                    android:textSize="@dimen/text_size_12"
+                    android:text="@string/btn_cancel"
+                    android:textColor="@color/gray_5f"/>
+            </LinearLayout>
+		</LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

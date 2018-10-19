@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="container" type="id"/>
+    <item name="image_loading_progress" type="id"/>
+    <item name="ad_category" type="id"/>
+    <item name="time_str" type="id"/>
+    
+    <item name="btn_back" type="id" />
+    <item name="btn_close" type="id" />
+    <item name="btn_ok" type="id" />
+    
+    <item name="btn_next" type="id" />
+    <item name="btn_cancel" type="id" />
+    <item name="btn_done" type="id" />    
+    <item name="btn_setting" type="id" />
+    <item name="btn_edit" type="id" />
+    <item name="btn_editrow" type="id" />
+    <item name="btn_save" type="id" />
+    
+    <item name="edit_box_icon" type="id" />
+    <item name="btn_sign_in" type="id" />
+    <item name="btn_sign_up" type="id" />
+    <item name="btn_verify" type="id" />
+    <item name="check_verify" type="id" />
+    
+    <item name="edit_user_name" type="id" />
+    <item name="edit_phone" type="id" />
+    
+    <item name="box_icon" type="id" />
+    <item name="box_title" type="id" />
+    
+    <item name="ad_image" type="id" />
+    <item name="ad_title" type="id" />
+    <item name="ad_price" type="id" />
+    <item name="ad_desc" type="id" />
+    <item name="location" type="id" />
+    <item name="distance" type="id" />
+    
+    <item name="detail_label" type="id" />
+    <item name="detail_value" type="id" />
+    
+    <item name="user_name" type="id" />
+    <item name="user_img" type="id" />
+    
+    <item name="selection_title" type="id" />
+    
+    <item name="list_view" type="id" />
+    
+    <item name="tag_showed" type="id" />
+    <item name="tag_label" type="id" />
+    
+    <item name="featured_lable" type="id" />
+    <item name="featured_gallery" type="id" />
+    
+    <item name="btn_toggle" type="id" />
+    <item name="btn_search" type="id" />
+    
+    <item name="top_height_bar" type="id" />
+    <item name="top_mid_label" type="id" />
+    <item name="category_label" type="id" />
+    <item name="item_count" type="id" />
+    <item name="pic_count_view" type="id" />
+    <item name="pic_count" type="id" />
+    
+    <item name="edit_search" type="id" />
+    <item name="list_search_keys" type="id" />
+    <item name="list_browse_menu" type="id" /> 
+      
+    <item name="scrollContainer" type="id" />   
+    <item name="data_view" type="id" />   
+    <item name="featured_view" type="id" />  
+     
+    <item name="icon_check" type="id" />   
+    <item name="keyword_txt" type="id" />   
+    <item name="map" type="id" />   
+    
+    <item name="pictures_pager_include" type="id" />   
+    <item name="page_indicator" type="id" />   
+    <item name="page_number_view" type="id" />   
+    <item name="map_layout" type="id" />   
+       
+    <item name="detail_0" type="id" />      
+    <item name="detail_1" type="id" />      
+    <item name="detail_2" type="id" />      
+    
+</resources>

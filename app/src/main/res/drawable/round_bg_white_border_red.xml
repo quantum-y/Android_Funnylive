@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<inset android:insetLeft="1.0px" android:insetRight="1.0px" android:insetTop="1.0px" android:insetBottom="1.0px"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <shape
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <stroke android:width="2px" android:color="@color/our_mark_color" />
+        <solid android:color="@android:color/white" />
+        <corners android:radius="5dip"
+            />
+    </shape>
+</inset>
+

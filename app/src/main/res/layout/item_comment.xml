@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/margin_normal"
+        android:orientation="horizontal">
+        <com.coco.livestreaming.app.ui.view.CircleImageView
+            android:id="@+id/img_user_photo"
+            android:layout_width="@dimen/auction_circleImage_radius"
+            android:layout_height="@dimen/auction_circleImage_radius"
+            android:src="@drawable/no_image" />
+
+        <LinearLayout
+            style="@style/layout_0w"
+            android:orientation="vertical"
+            android:layout_marginLeft="@dimen/margin_normal">
+            <TextView
+                android:id="@+id/txt_user_name"
+                style="@style/layout_mw"
+                android:textColor="@color/gray_3a"
+                android:textSize="@dimen/text_size_10"/>
+            <TextView
+                android:id="@+id/txt_comment"
+                style="@style/layout_mw"
+                android:textColor="@color/gray_3a"
+                android:textSize="@dimen/text_size_10"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View style="@style/splite_line_gray"/>
+</LinearLayout>
+
+

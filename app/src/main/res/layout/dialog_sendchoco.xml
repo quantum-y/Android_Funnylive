@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/dialog_sendchoco" 
+    xmlns:android="http://schemas.android.com/apk/res/android" 
+    style="@style/layout_mm">
+
+	<LinearLayout
+		style="@style/layout_mw"
+		android:orientation="vertical"
+		android:layout_alignParentBottom="true"
+		android:layout_centerHorizontal="true">
+		<ImageView
+			style="@style/layout_mw"
+		    android:background="@drawable/img_choco_header"/>
+		<LinearLayout 
+		    style="@style/layout_mw"
+		    android:background="@color/buy_choco_bg_color"
+		    android:orientation="vertical">
+		    <LinearLayout 
+			    style="@style/layout_mw"
+			    android:orientation="vertical"
+				android:padding="@dimen/margin_large">
+			    <LinearLayout style="@style/layout_mw">
+	                <TextView
+	                    android:text="@string/dialog_choco_to_who"
+	                    style="@style/choco_send_row_label"/>
+	                <RelativeLayout style="@style/layout_mm" android:layout_marginStart="10dp">
+	                    <TextView
+	                        android:id="@+id/lb_choco_to_who"
+	                        style="@style/choco_send_row_edit_box"
+	                        android:text="textUser"/>
+	                    <View style="@style/splite_line_gray"
+	                        android:layout_alignParentBottom="true"/>
+	                </RelativeLayout>
+	            </LinearLayout>
+	            <LinearLayout style="@style/choco_send_info_row" >
+	                <TextView
+	                    android:text="@string/dialog_choco_my_cnt"
+	                    style="@style/choco_send_row_label"/>
+	                <RelativeLayout style="@style/layout_mm" android:layout_marginStart="10dp">
+	                    <TextView
+	                        android:id="@+id/lb_choco_cnt"
+	                        style="@style/choco_send_row_edit_box"
+	                        android:text="@string/test_value"
+                            android:textColor="@color/orange_color"/>
+	                    <View style="@style/splite_line_gray"
+	                        android:layout_alignParentBottom="true"/>
+	                </RelativeLayout>
+	            </LinearLayout>
+	
+	            <LinearLayout style="@style/choco_send_info_row" >
+	                <TextView
+	                    android:text="@string/dialog_choco_send_cnt"
+	                    style="@style/choco_send_row_label"/>
+	                <RelativeLayout style="@style/layout_mm" android:layout_marginStart="10dp">
+                        <!--<Spinner-->
+                            <!--android:id="@+id/spinner_choco_send_cnt"-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="match_parent"-->
+                            <!--style="@style/choco_send_row_edit_box" />-->
+	                    <EditText
+	                        android:id="@+id/lb_choco_send_cnt"
+                            style="@style/choco_send_row_edit_box"
+	                        android:layout_width="match_parent"
+	                        android:inputType="number"/>
+	                    <View style="@style/splite_line_gray"
+	                        android:layout_alignParentBottom="true"/>
+	                </RelativeLayout>
+	            </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/layout_mw"
+                android:padding="@dimen/margin_normal">
+                <Button
+                    android:id="@+id/btn_choco_ok"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/item_ex_small_height"
+                    android:layout_weight="1"
+                    android:background="@drawable/round_bg_orange"
+                    android:gravity="center"
+                    android:textSize="@dimen/text_size_12"
+                    android:text="@string/dialog_choco_title"
+                    android:textColor="@color/gray_5f"/>
+                <View
+                    android:layout_width="3dp"
+                    android:layout_height="match_parent"/>
+
+                <Button
+                    android:id="@+id/btn_charge"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/item_ex_small_height"
+                    android:layout_weight="1"
+                    android:background="@drawable/round_bg_blue"
+                    android:gravity="center"
+                    android:textSize="@dimen/text_size_12"
+                    android:text="@string/dialog_choco_charge"
+                    android:textColor="@color/white"/>
+                <View
+                    android:layout_width="3dp"
+                    android:layout_height="match_parent"/>
+
+                <Button
+                    android:id="@+id/btn_choco_cancel"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/item_ex_small_height"
+                    android:layout_weight="1"
+                    android:background="@drawable/round_bg_no_border_gray"
+                    android:gravity="center"
+                    android:textSize="@dimen/text_size_12"
+                    android:text="@string/btn_cancel"
+                    android:textColor="@color/gray_5f"/>
+            </LinearLayout>
+		</LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

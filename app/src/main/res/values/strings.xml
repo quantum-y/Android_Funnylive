@@ -1,0 +1,585 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name_shift">Funny Live</string>
+    <string name="hello_world">Hello world!</string>
+
+    <string name="no_external_storage">저장소에 접근할수 없습니다.</string>
+    <string name="press_back_again_to_exit">앱을 종료하시려면 한번 더 누르십시오.</string>
+
+    <string name="playing_item_bj_name">BJ %1$s</string>
+    <string name="playing_item_id_name">ID: %1$s</string>
+    <string name="view_profile">프로필보기</string>
+
+    <string name="loadding_text">자료로딩중...</string>
+    <string name="no_datas">현재 방영중인 데이터가 없습니다!</string>
+    <string name="logo_string">10초동안 시청하기, 방송하기선택이 없을경우, 시청하기로 자동 이동됩니다.</string>
+
+    <string name="dialog_to_bj_login_title">BJ로그인>></string>
+
+    <string name="btn_back">뒤로</string>
+
+    <string name="dialog_notice">알 림</string>
+
+    <string name="dialog_broadcast_live_stop_text">방송을 종료하시겠습니까?</string>
+    <string name="dialog_broadcast_view_stop_text">방송시청을 종료하시겠습니까?</string>
+    <string name="dialog_logout_text">이미 %1$s로 로그인하였습니다. 로그아웃하시겠습니까?</string>
+
+    <string name="dialog_favorite_success">귀하는 BJ %1$s님을 추천하였습니다.</string>
+    <string name="dialog_favorite_fail">귀하는 BJ %1$s님을 이미 추천하였으므로 지금 추천하실수 없습니다.</string>
+
+    <string name="dialog_auction_cancel">경매를 취소하겠습니까?</string>
+
+    <string name="operation_failure">서버와 접속이 끊어졌습니다.</string>
+    <string name="operation_recommend_failure">미안하지만 지금은 추천하실수 없습니다. 후에 다시 시도해주세요.</string>
+    <string name="operation_chat_failure">미안하지만 지금은 채팅조작을 하실수 없습니다. 후에 다시 시도해주세요.</string>
+    <string name="operation_chat_dumb">벙어리이므로 채팅불가합니다. 후에 다시 시도해주세요.</string>
+    <string name="operation_banana_failure">미안하지만 지금은 바나나를 보낼수 없습니다. 후에 다시 시도해주세요.</string>
+    <string name="operation_buy_failure">미안하지만 지금은 바나나를 구입할수 없습니다. 후에 다시 시도해주세요.</string>
+    <string name="operation_reloading_failure">미안하지만 망상태와 관련하여 방송을 재로딩합니다.</string>
+
+    <string name="dialog_choco_cnt_error">선물할 쵸코를 보유하고 있는 쵸코수보다 작게 설정하여야 합니다.</string>
+    <string name="dialog_choco_cnt_zero">선물할 쵸코수는 1이상이여야 합니다.</string>
+    <string name="dialog_choco_bj_name">BJ님을 입력하여야 합니다.</string>
+
+    <string name="dialog_choco_title">선물하기</string>
+    <string name="dialog_choco_ques">쵸코란?</string>
+    <string name="dialog_choco_answer">시청자가 BJ에게 선물할수있는 유료아이템입니다.</string>
+    <string name="dialog_choco_comment">(BJ는 쵸코를 환전하여 실제수익으로 돌려받게 됩니다.)</string>
+    <string name="dialog_choco_to_who">선물할 대상</string>
+    <string name="dialog_choco_my_cnt">알 보유량</string>
+    <string name="dialog_choco_my_cnt_unit">개</string>
+    <string name="dialog_choco_send_cnt">선물할 알 개수</string>
+
+    <string name="dialog_choco_btn_buy">쵸코 구매...</string>
+    <string name="dialog_choco_btn_send">쵸코 선물하기</string>
+
+    <string name="dialog_choco_send_toast_success">%1$s이 %2$s에게 쵸코 %3$s개를 전송하였습니다.</string>
+
+    <string name="preference_cocotving">com_cocotving_app</string>
+    <string name="pref_userid">coco_userid</string>
+    <string name="pref_password">coco_password</string>
+
+    <string name="login_bj_success">로그인하였습니다.</string>
+    <string name="login_failure">로그인 되지 않았습니다.</string>
+    <string name="login_block_failure">현재 계정은 블록입니다.</string>
+    <string name="login_pending_failure">아직 가입승인이 되지 않았습니다.</string>
+    <string name="login_rejected_failure">가입신청이 거절되었습니다.</string>
+
+    <string name="logout_bj_success">로그아웃되었습니다.</string>
+    <string name="logout_failure">로그아웃이 실패하였습니다.</string>
+
+    <string name="profile_view_title">내 프로필정보</string>
+
+    <string name="category_game">게임</string>
+    <string name="category_life">라이프</string>
+    <string name="category_music">뮤직</string>
+    <string name="category_adult">Adult</string>
+    <string name="category_all">All</string>
+    <string name="category_search">Search</string>
+
+    <string name="to_home">홈화면</string>
+    <string name="broad_start">방송시작</string>
+    <string name="broad_end">방송중지</string>
+    <string name="broad_setting">설  정</string>
+
+    <string name="broad_start_toast">%1$s님이 방송을 시작합니다.</string>
+    <string name="broad_end_toast">%1$s님이 방송을 중지합니다.</string>
+
+    <string name="warning_search">검색어를 입력하십시오.</string>
+
+    <string-array name="broadcast_theme">
+        <item>음악</item>
+        <item>게임</item>
+        <item>생활</item>
+        <item>19금</item>
+    </string-array>
+    <string-array name="broadcast_num_theme">
+        <item>Music</item>
+        <item>Game</item>
+        <item>Life</item>
+        <item>Adult</item>
+    </string-array>
+
+    <string-array name="broadcast_quality">
+        <item>저화질</item>
+        <item>표준</item>
+        <item>고화질</item>
+    </string-array>
+    <integer-array name="broadcast_num_quality">
+        <item>1500</item>
+        <item>3750</item>
+        <item>5000</item>
+    </integer-array>
+
+    <!-- strings for new version -->
+
+    <string name="app_name">Funny Live</string>
+    <string name="app_name_ko">코코티빙</string>
+    <string name="member_explore_title">EXPLORE</string>
+    <string name="logo_company_name">Powered by funnylive.com</string>
+    <string name="login_logo_mark_str">Bring Fashion to Live</string>
+    <string name="login_agreement_privacy">다음버튼을 누릅니다.</string>
+    <string name="login_agreement">이용약관</string>
+    <string name="login_and"> 및 </string>
+    <string name="login_privacy">개인정보취급방침</string>
+    <string name="login_more">더보기</string>
+    <string name="connect_error">웹접속에 문제가 있습니다!</string>
+
+    <string name="dialog_bj_login_title">로그인</string>
+    <string name="btn_cancel">취소</string>
+    <string name="btn_signup">회원가입</string>
+    <string name="btn_confrim">확인</string>
+    <string name="btn_login_confrim">가입하기</string>
+    <string name="btn_find_id_pw">아이디/비밀번호 찾기</string>
+
+    <string name="dialog_login_username_hint">이름을 입력하세요.</string>
+    <string name="dialog_login_userid_hint">아이디를 입력하세요.</string>
+    <string name="dialog_login_pw_hint">비밀번호를 입력하세요.</string>
+    <string name="dialog_login_pw_retype_hint">비밀번호를 다시 입력하세요.</string>
+    <string name="dialog_login_people_no">주민등록번호를 입력하세요</string>
+
+    <string name="user_id">아이디:</string>
+    <string name="password">비밀번호:</string>
+    <string name="loading_text">잠시만...</string>
+
+    <string name="search_title">검색</string>
+    <string name="search_category_detail">더보기</string>
+
+    <string name="category_recom">추천</string>
+    <string name="category_new">신규</string>
+    <string name="category_best">Best</string>
+    <string name="category_near">근처</string>
+
+    <string name="category_nodata">자료없음</string>
+
+    <string name="category_detail_new">NEW</string>
+    <string name="category_detail_recom">RECOM</string>
+    <string name="category_detail_best">BEST</string>
+    <string name="category_detail_near">NEAR</string>
+
+    <string name="broadcast_start">방송하기!</string>
+    <string name="broadcast_curber_img">커버사진</string>
+    <string name="broadcast_title">방송제목</string>
+    <string name="broadcast_category">방송카테고리</string>
+
+    <string name="setting_title">방송제목을 입력하세요.</string>
+    <string name="setting_category">방송테마</string>
+    <string name="setting_quality">방송화질</string>
+    <string name="setting_19">19+방송</string>
+    <string name="setting_password">비밀번호</string>
+    <string name="setting_choco_cnt">유료방송</string>
+    <string name="setting_room_num">방인원수</string>
+
+    <string name="warning_username">이름을 입력하셔야합니다!</string>
+    <string name="warning_user_id">아이디를  입력하셔야합니다!</string>
+    <string name="warning_people_no">주민등록번호를 입력하세요</string>
+    <string name="warning_name_id">이름 또는 아이디를 입력하셔야합니다!</string>
+    <string name="warning_same_user_id">아이디가 중복되었습니다.</string>
+    <string name="warning_nickname">닉네임을 입력하셔야 합니다!</string>
+    <string name="warning_same_nickname">닉네임이 중복되었습니다.</string>
+    <string name="warning_phonenumber">휴대폰번호를 입력하셔야 합니다!</string>
+    <string name="warning_email">이메일주소를 입력하셔야 합니다!</string>
+    <string name="register_sucess">당신의 메일로 인증코드를 전송하였습니다.</string>
+    <string name="idpwd_search_error">입력하신 정보들이 옳바르지 않습니다.</string>
+    <string name="warning_register">아직 가입이 승인되지 않았습니다.</string>
+    <string name="warning_title">방송타이틀을 설정하여야 합니다!</string>
+    <string name="warning_pw">비밀번호를 입력하여야 합니다!</string>
+    <string name="warning_pw_confirm">비밀번호가 맞지 않습니다.</string>
+    <string name="warning_choco_cnt">알개수를 입력하여야 합니다!.</string>
+    <string name="warning_room_num">방인원수를 선택하여야 합니다.</string>
+    <string name="set_room_password">방의 비밀번호를 설정하세요.</string>
+    <string name="set_room_password_again">방의 비밀번호를 한번 더 입력하세요.</string>
+
+    <string name="warning_broadcast">건강한 방송 환경을 위하여 24시간 모니터링중입니다. 흡연, 에로, 노출, 저속한 내용은 제재 대상입니다!</string>
+    <string name="warning_broadcast_listener">멤버로 로그인하여야 합니다.</string>
+
+    <string name="view_favorite">추천</string>
+    <string name="view_choco">쵸코</string>
+    <string name="notice_title">공지목록</string>
+    <string name="share_title">공유하기</string>
+
+    <string name="best_pan">Top Fans</string>
+    <string name="member_overview">자기 소개</string>
+    <string name="user_info_where">위치</string>
+    <string name="excharge_into">환전신청</string>
+    <string name="excharge_start">신청하기</string>
+    <string name="warning_excharge">알개수 1000개이상에서 환전이 가능합니다.</string>
+    <string name="warning_max_banana_count">%d 개보다 작게</string>
+    <string name="logout">로그아웃</string>
+    <!-- chat -->
+    <string name="action_leave">Leave</string>
+    <string name="action_send">Send</string>
+    <string name="prompt_everybody_message">모든사람과 채팅</string>
+    <string name="prompt_single_message">1:1 채팅</string>
+    <string name="str_chat_lock_on">채팅을 잠금니다.</string>
+    <string name="str_chat_lock_on_state">채팅잠금상태</string>
+    <string name="str_chat_lock_off">채팅을 오픈합니다.</string>
+
+    <string name="connect">챠팅서버와 련결되었습니다.</string>
+    <string name="disconnect">챠팅서버와 련결이 끊겼습니다.</string>
+    <string name="error_connect">련결실패</string>
+
+    <string name="message_welcome">Welcome to Socket.IO Chat –</string>
+    <plurals name="message_participants">
+        <item quantity="one">there\'s %d participant</item>
+        <item quantity="other">there are %d participants</item>
+    </plurals>
+    <string name="message_user_joined">입장하였습니다.</string>
+    <string name="message_user_left">퇴장하였습니다.</string>
+    <string name="user_action_typing">is typing</string>
+    <string name="button_dismiss">접속중 오류</string>
+
+    <string name="status_connecting">로딩중...</string>
+    <string name="status_connected">접속되었습니다.</string>
+    <string name="status_disconnecting">잠시만...</string>
+
+    <string name="dialog_password_title">암호</string>
+    <string name="dialog_password_incorrect">암호가 정확치 않습니다.</string>
+    <string name="dialog_request_code_title">인증코드</string>
+    <string name="dialog_request_code_incorrect">인증코드가 정확치 않습니다.</string>
+    <string name="room_out_alert">방송자가 방송을 마치고 탈퇴하였습니다.</string>
+    <!--cgh_dit-->
+
+    <string name="ad_unit_id">ca-app-pub-8334046470101222/3588980374</string>
+    <string name="fbapp_id">425985557555923</string>
+    <string name="sign_in">로그인</string>
+    <string name="sign_in_u">SIGN IN</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="user_name">사 용 자 이 름</string>
+    <string name="confirm">확인</string>
+
+    <string name="forgot_pass"><u>Forgot Password?</u></string>
+    <string name="email_address">Email address</string>
+    <string name="birthday">Birthday</string>
+    <string name="nation">Nationality</string>
+    <string name="nation_option">Nationality (Optional)</string>
+    <string name="gender">Gender</string>
+    <string name="gender_option">Gender (Optional)</string>
+    <string name="next">Next</string>
+    <string name="done">Done</string>
+    <string name="done2">DONE</string>
+    <string name="cancel">Cancel</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="skip">SKIP</string>
+    <string name="lskip">Skip</string>
+    <string name="ok">OK</string>
+    <string name="save">Save</string>
+
+    <!-- browse, profile and favourite -->
+    <string name="search">Search</string>
+    <string name="my_qatarliving">My Qatar Living</string>
+    <string name="ledit">Edit</string>
+    <string name="edit">EDIT</string>
+    <string name="end">END</string>
+    <string name="img_desc">IMAGE</string>
+    <string name="currentads">현재 Ads</string>
+    <string name="history">히스터리</string>
+    <string name="qar">QAR</string>
+    <string name="str_username">Username</string>
+    <string name="str_regid">89030495</string>
+    <string name="str_since">Member since Sep 2014</string>
+    <string name="str_ad_title">Peugeot 207 CC Convertible</string>
+    <string name="str_ad_desc">130,000 km</string>
+    <string name="str_ad_price">18000</string>
+    <string name="str_ad_where">Al Messila</string>
+    <string name="favourite">Favourite</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="change_email">Change Email</string>
+    <string name="change_password">Change Password</string>
+    <string name="browse">Browse</string>
+    <string name="valid_email">Please input valid email</string>
+    <string name="old_pass_mismatch">Old Password Mismatch</string>
+    <string name="input_new_password">Input New Password</string>
+    <string name="confirm_password">Please Confirm New Password</string>
+    <string name="new_pass_mismatch">New Password Mismatch</string>
+    <string name="uploading">Uploading...</string>
+    <string name="deleting">Deleting...</string>
+    <string name="filter">Filter</string>
+    <string name="filter2">FILTER</string>
+    <string name="sort_by">SORT BY</string>
+    <string name="defaul">Default</string>
+    <string name="price_lowest_to_highest">Price - Lowest to Highest</string>
+    <string name="price_highest_to_lowest">Price - Highest to Lowest</string>
+    <string name="created_date">Created Date</string>
+    <string name="clear_all">CLEAR ALL</string>
+    <string name="apply">APPLY</string>
+    <string name="delete">Delete</string>
+    <string name="refresh_ad">Refresh Ad</string>
+    <string name="refresh">새로고침</string>
+    <string name="end_ad">End This Ad</string>
+    <string name="refresh_now">Rrefresh Now</string>
+    <string name="refresh_txt_1">In order to elis ac fringilla volutpat, you may refresh your ad up to twice every hour</string>
+    <string name="refresh_txt_2">NOTE: hasellus vestibulum lorem vel turpis ultrices feugiat. Pellentesque sem ex,</string>
+    <string name="refresh_txt_3">Your ad has recently been refreshed! You may refresh your ad up to twice every hour.\n\nPlease try again in:</string>
+
+    <!-- home -->
+    <string name="featured_on">Featured on Qatar Living</string>
+    <string name="recently_viewed">Recently Viewed</string>
+    <string name="my_favorites">My Favorites</string>
+    <string name="title">Title</string>
+    <string name="price_sample">98,000</string>
+    <string name="price_unit">QAR</string>
+    <string name="edit_sections">Edit Sections</string>
+
+    <!-- Ad detail -->
+    <string name="contact">CONTACT</string>
+    <string name="related_ads">Related Ads</string>
+    <string name="gallery_no_file">Selected photo does not exist or is corrupted.</string>
+    <string name="loading_fail">Failed to load data</string>
+    <string name="error_network">Network connection is not available, please try again later</string>
+    <string name="upload_fail">Failed to upload</string>
+    <string name="loading">Loading...</string>
+    <string name="processing">Processing...</string>
+    <string name="description">Description</string>
+    <string name="detais">Details</string>
+    <string name="you_must_login_first">You must Login first</string>
+
+    <!-- contact -->
+    <string name="contact_seller">Contact Seller</string>
+    <string name="call">Call</string>
+    <string name="message">Message</string>
+    <string name="email">Email</string>
+    <string name="error_invalid_phone">Invalid phone number</string>
+
+    <!-- share -->
+    <string name="share_ad">Share Ad</string>
+    <string name="facebook">Facebook</string>
+    <string name="twitter">Twitter</string>
+    <string name="google">Google</string>
+    <string name="mobile">휴대폰 로그인</string>
+    <string name="login">로그인</string>
+    <string name="whats_app">Whats App</string>
+    <string name="copy_link">Copy Link</string>
+
+    <!-- edit selections -->
+    <string name="edit_selections">Eedit Selections</string>
+    <string name="featured">Featured</string>
+    <string name="vehicels">Vehicels</string>
+    <string name="sending">Sending...</string>
+    <string name="checking">Checking...</string>
+    <string name="input_phone">Please input your phone number</string>
+    <string name="invalid_phone">Please input valid Qatari phone number</string>
+    <string name="no_response">Invalid Server Response</string>
+    <string name="input_code">Please input verification code</string>
+
+    <!-- main -->
+    <string name="profile">Profile</string>
+    <string name="create_ad">CREATE AD</string>
+    <string name="home">Home</string>
+    <string name="categories">Categories</string>
+    <string name="settings">Settings</string>
+
+    <!-- create post -->
+    <string name="select_category">Select Category</string>
+    <string name="create_post">Create Post</string>
+    <string name="preview">PREVIEW</string>
+    <string name="classified_type">Classifed Type</string>
+    <string name="change_phone">Change Phone</string>
+    <string name="price">Price</string>
+    <string name="location">Location</string>
+    <string name="add_detail">Add Detail</string>
+    <string name="optional_details">Optional Details</string>
+    <string name="take_a_photo">Take a photo</string>
+    <string name="select_from_gallery">Select from gallery</string>
+    <string name="create_ad_filed_input_errors">Please fill all mandatory fields.</string>
+    <string name="select_photo">Select Photos</string>
+    <string name="errors_select_photo">Please choose atleast 1 image</string>
+    <string name="characters">characters</string>
+    <string name="hint_title">Write title here</string>
+    <string name="hint_description">Write description here</string>
+    <string name="kilometres">Kilometres</string>
+    <string name="enter_location">Enter Location</string>
+    <string name="errors_save_location">Please choose location</string>
+    <string name="submit">SUBMIT</string>
+    <string name="advert">Advert</string>
+    <string name="wanted">Wanted</string>
+
+    <!-- settings -->
+    <string name="support">Support</string>
+    <string name="more_qatar_living">More Qatar Living</string>
+    <string name="terms">Terms &amp; Privacy</string>
+    <string name="are_you_sure">Are you sure?</string>
+
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="close">Close</string>
+
+    <string name="profile_user_get_my_vip">Get My VIP</string>
+    <string name="profile_user_vip">VIP</string>
+    <string name="str_fan">팬</string>
+    <string name="str_plus_one">+1</string>
+    <string name="str_following">팔로잉</string>
+    <string name="str_friend">친구</string>
+    <string name="profile_user_import">수 입</string>
+    <string name="profile_user_egg">알</string>
+    <string name="profile_user_choco">알</string>
+    <string name="profile_user_level">레 벨</string>
+    <string name="profile_user_rank">랭 킹</string>
+    <string name="profile_user_setting">설 정</string>
+    <string name="profile_user_feedback">피드백</string>
+    <string name="profile_user_name">나의 이름은</string>
+    <string name="profile_user_nickname">닉네임</string>
+    <string name="profile_user_weight">몸무게</string>
+    <string name="profile_user_height">나의 키는</string>
+    <string name="profile_user_blood">나의 혈액형은</string>
+    <string name="profile_user_bodytype">나의 몸매는</string>
+    <string name="profile_user_outward">나의 외모는</string>
+    <string name="profile_user_constellation">나의 별자리는</string>
+    <string name="profile_user_interest">나의 취미/특기</string>
+    <string name="profile_user_usercharactor">나의 성격은</string>
+    <string name="profile_user_jinx">나의 징크스는</string>
+    <string name="profile_user_habbit">나의 습관은</string>
+    <string name="profile_user_beside">나의 곁에는</string>
+    <string name="profile_user_fassion">패션 스타일</string>
+    <string name="profile_user_food">좋아하는 음식</string>
+    <string name="profile_user_color">좋아하는 색</string>
+    <string name="profile_user_music">좋아하는 음악</string>
+
+    <string name="user_follow">팔로우</string>
+    <string name="user_unfollow">언팔로우</string>
+    <string name="user_chat">채팅</string>
+    <string name="user_invite">게스트 초대</string>
+    <string name="user_invite_accept">게스트 초대수락</string>
+    <string name="user_report_kr">신고</string>
+    <string name="user_report_en">Report</string>
+
+    <string name="str_id">FUNNY ID</string>
+    <string name="str_oneself_introduce">자기소개</string>
+    <string name="str_oneself_introduce_empty">자기 소개 없음</string>
+    <string name="str_profile_edit">프로필 편집</string>
+    <string name="str_profile_edit_name">이름</string>
+    <string name="str_profile_edit_nickname">닉네임</string>
+    <string name="str_profile_edit_id">아이디</string>
+    <string name="str_profile_edit_sex">성별</string>
+    <string name="str_profile_edit_birthday">생일</string>
+    <string name="str_profile_edit_native">고향</string>
+    <string name="str_profile_edit_knowledge">학력</string>
+    <string name="str_profile_edit_phone">+82</string>
+    <string name="str_profile_edit_email">이메일</string>
+    <string name="str_profile_edit_people_no">주민등록번호</string>
+
+    <string name="str_profile_edit_name_hint">이름을 입력하기</string>
+    <string name="str_profile_edit_nickname_hint">닉네임을 입력하세요.</string>
+    <string name="str_profile_edit_sex_hint">성별을 입력하기</string>
+    <string name="str_profile_edit_birthday_hint">생일을 입력하기</string>
+    <string name="str_profile_edit_native_hint">고향을 입력하기</string>
+    <string name="str_profile_edit_id_hint">영문 a~z, A~Z, 수자 0~9의 조합으로 입력하세요.</string>
+    <string name="str_profile_edit_oneself_hint">자기소개를 입력하기</string>
+    <string name="str_profile_edit_history_hint">자기학력을 입력하기</string>
+    <string name="str_profile_edit_phone_hint">휴대폰번호 입력하세요.</string>
+    <string name="str_profile_edit_email_hint">이메일을 입력하세요.</string>
+    <string name="str_profile_edit_people_no_hint">000000-*******(앞6자리)\n아이디/비밀번호를 찾을 때 이용합니다.</string>
+    <string name="str_profile_edit_password_hint">보안을 위하여 8글자이상으로 해주세요</string>
+
+    <string name="str_profile_setting">설정</string>
+    <string name="str_profile_setting_alarm">즐겨찾기</string>
+    <string name="str_profile_setting_protect_location">위치 보호</string>
+    <string name="str_profile_setting_account">연동된 계정</string>
+    <string name="str_profile_setting_kick">차단된 목록</string>
+    <string name="str_profile_setting_about_us">이용약관</string>
+    <string name="str_profile_setting_translator">번역을 해주세요</string>
+    <string name="str_profile_setting_cash_del">캐시 삭제</string>
+    <string name="str_profile_setting_logout">로그아웃</string>
+
+    <string name="str_confirm_yes">수락</string>
+    <string name="str_confirm_no">거부</string>
+
+    <string name="str_invite_denied">초청을 거부하였습니다.</string>
+    <string name="str_invite_accept">초청이 수락되었습니다.</string>
+    <string name="str_invite_request">%1$s님에게 초대요청</string>
+    <string name="str_invite_you">%1$s님이 게스트로 초대하였습니다.수락하시겠습니까?</string>
+    <string name="str_invite_limit">3명이상 초대할수 없습니다.</string>
+    <string name="str_invite_reloading">초청방송화면 재로딩합니다.</string>
+    <string name="str_offline_info">미안하지만 %1$s님은 오프라인되었습니다.</string>
+    <string name="str_offline_info1">미안하지만 방송은 오프라인되었습니다.</string>
+    <string name="str_invite_error_info">미안하지만 초청자의 방송이 오류입니다.다시 시도해주세요.</string>
+    <string name="str_adult_info">미안하지만 19세이상방송은 시청하실수 없습니다.</string>
+    <string name="str_friend_info">미안하지만 이방송은 친구들만 시청하실수 있습니다.</string>
+    <string name="str_onlinenumber_over_info">미안하지만 인원초과로 더이상 시청하실수 없습니다.</string>
+    <string name="str_enter_little_money_info">미안하지만 보유하신 알수가 모자랍니다.</string>
+    <string name="str_force_out">미안하지만 당신은 방송권한이 없습니다..</string>
+    <string name="str_invite_reject">방송자가 초청화면을 껐습니다.</string>
+    <string name="str_invite_off">초청화면을 끄시려면 길게 눌러주세요.</string>
+    <string name="str_guest_camera_off">카메라를 끄시려면 길게 눌러주세요.</string>
+    <string name="str_no_live_stream_list">방송목록을 얻어올수 없습니다.</string>
+    <string name="str_no_next_stream">현재 다음방송이 없습니다.</string>
+    <string name="str_no_prev_stream">현재 이전방송이 없습니다.</string>
+    <string name="str_writing">글쓰기</string>
+    <string name="str_sell_thing">판매물품</string>
+    <string name="str_content">내용</string>
+    <string name="str_auction_hour">경매시간</string>
+    <string name="str_select_one_image_at_lease">한개이상의 이미지를 선택하세요.</string>
+    <string name="str_sell_thing_hint">판매물품의 이름을 입력하세요.</string>
+    <string name="str_content_hint">글내용을 입력하세요</string>
+    <string name="str_like">좋아요</string>
+    <string name="str_comment">댓글</string>
+    <string name="str_comment_add">댓글 추가</string>
+    <string name="str_auction_cancel">경매취소</string>
+    <string name="str_present_egg_count">%1$s님께서 <b>알 %2$s개</b>를 선물하셨습니다.</string>
+
+    <string name="dialog_choco_send_cnt_hint">선물할 쵸코개수를 입력하기</string>
+    <string name="dialog_choco_charge">충전하기</string>
+
+    <string name="str_level_prifix">Lv.%d</string>
+    <string name="str_rank_prifix">%d</string>
+    <string name="str_ranking_top_100">Top 100 미진입</string>
+    <string name="str_ranking_prifix">Rank.%d</string>
+    <string name="title_activity_profile_info">ProfileInfoActivity</string>
+
+    <!--알 충진-->
+    <string name="str_choco_charge_count">알 %d개</string>
+    <string name="str_choco_charge_price">%d 원</string>
+    <string name="str_choco_excharge_price">(환산금액 %d 원)</string>
+
+    <string name="choco_charge_btn">구매하기</string>
+    <string name="choco_charge_label">알 충전하기</string>
+
+    <string name="test_value">XXX</string>
+    <string name="test_userid">유저</string>
+    <string name="test_location">Moscow</string>
+    <string name="str_left_time">남았습니다.</string>
+    <string name="str_seller">판매자</string>
+
+    <string name="category_high">고화질</string>
+    <string name="category_mid">표준</string>
+    <string name="category_low">저화질</string>
+    <string name="category_19">+LIVE</string>
+    <string name="category_muti">다자간</string>
+    <string name="password_hint">***********</string>
+    <string name="entre_live_banana_hint">알 개수를 입력하세요.</string>
+    <string name="entre_user_count_hint">방인원수를 입력하세요.</string>
+    <string name="sign_up_with">Sign up with</string>
+    <string name="sex_male">남자</string>
+    <string name="sex_female">여자</string>
+    <string name="sex_protect">비밀</string>
+    <string name="excharge_username">예금주 </string>
+    <string name="excharge_username_hint">예금주 입력하세요.</string>
+    <string name="excharge_banana_amount">알</string>
+    <string name="excharge_amount_hint">금액 입력하세요.</string>
+    <string name="excharge_bankername">은행명 </string>
+    <string name="excharge_bankername_hint">은행명 입력하세요.</string>
+    <string name="excharge_accountnum">계좌번호 </string>
+    <string name="excharge_accountnum_hint">계좌번호 입력하세요.</string>
+    <string name="excharge_verify">신분증</string>
+    <string name="excharge_tongjang">통장사본</string>
+    <string name="excharge_done">신청하기</string>
+    <string name="password_input_hint">암호를 입력하세요.</string>
+    <string name="request_code_input_hint">인증코드를 입력하세요.</string>
+    <string name="finish">종료</string>
+    <string name="chat_send">전송</string>
+
+    <string name="profile_image_select_warning">선택하신 파일은 이미지가 아닙니다.</string>
+    <string name="str_user_force_out">강제퇴장</string>
+    <string name="title_activity_register">RegisterActivity</string>
+    <string name="str_register_title">회원가입</string>
+    <string name="str_register_idpwd_title">아이디/비밀번호 찾기</string>
+    <string name="str_register_idpwd_success_result">회원가입 시 입력하신 이메일주소로 아이디와 비밀번호를 받으실수 있습니다.</string>
+
+    <string name="str_camera_error">카메라장치가 없거나 초기화할수 없습니다.</string>
+    <string name="title_activity_profile_view_info_edit_photo">ProfileViewInfoEditPhotoActivity</string>
+    <string name="str_photo_drag_info">사진을 변경하거나 삭제하려면 클릭하세요. 사진을 드래그하여 순서를 변경하십시오.</string>
+    <string name="str_wowza_error">동영상방송서버와의 연결이 끊어졌습니다.</string>
+</resources>

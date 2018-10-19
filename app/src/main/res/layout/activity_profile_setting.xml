@@ -1,0 +1,42 @@
+<LinearLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@id/container"
+    style="@style/layout_mm"
+    android:background="@color/white"
+    android:orientation="vertical">
+	<FrameLayout
+		android:id="@+id/lay_login_agreement_id"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:visibility="gone" />
+    <LinearLayout
+        android:id="@+id/bar"
+		android:layout_width="match_parent"
+		android:layout_height="@dimen/btn_profile_width">
+		<ImageButton
+			android:id="@+id/img_back_id"
+			android:layout_width="@dimen/btn_profile_width"
+			android:layout_height="@dimen/btn_profile_width"
+			android:src="@drawable/ic_arrow_left"
+			android:background="@color/transparent"
+			android:layout_gravity="start|center_vertical"
+			android:contentDescription="@string/action_leave" />
+	</LinearLayout>
+
+    <View style="@style/splite_line_gray"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_normal"
+        android:background="@color/light_gray_color" />
+    <View style="@style/splite_line_gray"/>
+	
+    <LinearLayout 
+        style="@style/layout_m0"
+	    android:orientation="vertical">
+        <include
+	        style="@style/layout_mw"
+	        layout="@layout/profile_setting_bottom" />
+    </LinearLayout>
+
+</LinearLayout>

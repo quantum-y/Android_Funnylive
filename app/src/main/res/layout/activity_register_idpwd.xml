@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_register"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_gray_color"
+    android:orientation="vertical"
+    tools:context="com.coco.livestreaming.app.ui.activity.RegisterActivity">
+
+    <RelativeLayout
+        android:id="@+id/bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/btn_profile_width"
+        android:background="@android:color/white">
+        <Button
+            android:id="@+id/btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/btn_profile_width"
+            android:text="@string/str_register_idpwd_title"
+            android:textSize="@dimen/text_size_14"
+            android:drawableLeft="@drawable/ic_arrow_left"
+            android:paddingLeft="@dimen/margin_small"
+            android:background="@android:color/transparent"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true" />
+    </RelativeLayout>
+
+    <View style="@style/splite_line_gray"
+        android:layout_marginBottom="@dimen/margin_normal"/>
+    <View style="@style/splite_line_gray"/>
+
+    <LinearLayout style="@style/profile_edit_info_row" >
+        <TextView
+            android:text="@string/str_profile_edit_name"
+            style="@style/profile_setting_bottom_row_label"/>
+        <EditText
+            android:id="@+id/edit_user_name_id"
+            style="@style/profile_setting_edit_box"
+            android:hint="@string/dialog_login_username_hint"
+            android:inputType="text" />
+    </LinearLayout>
+    <View style="@style/splite_line_gray"/>
+
+    <LinearLayout style="@style/profile_edit_info_row" >
+        <TextView
+            android:text="@string/str_profile_edit_id"
+            style="@style/profile_setting_bottom_row_label"/>
+        <EditText
+            android:id="@+id/edit_user_id_id"
+            style="@style/profile_setting_edit_box"
+            android:hint="@string/dialog_login_userid_hint"
+            android:inputType="text" />
+    </LinearLayout>
+    <View style="@style/splite_line_gray"
+        android:layout_marginBottom="@dimen/margin_normal" />
+    <View style="@style/splite_line_gray"/>
+
+    <LinearLayout style="@style/profile_edit_info_row" >
+        <TextView
+            android:text="@string/str_profile_edit_people_no"
+            style="@style/profile_setting_bottom_row_label"/>
+        <EditText
+            android:id="@+id/edit_user_people_no_id"
+            style="@style/profile_setting_edit_box"
+            android:hint="@string/dialog_login_people_no"
+            android:inputType="numberSigned" />
+    </LinearLayout>
+    <View style="@style/splite_line_gray"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingTop="@dimen/margin_large"
+        android:paddingLeft="@dimen/padding_login_screen"
+        android:paddingRight="@dimen/padding_login_screen"
+        android:background="@color/white">
+
+        <Button
+            android:id="@+id/btn_ok"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/btn_login_height"
+            android:background="@drawable/btn_white_round_border_blue"
+            android:text="@android:string/ok"
+            android:textColor="@color/main_blue_color"
+            android:textSize="@dimen/text_size_14" />
+
+    </LinearLayout>
+
+</LinearLayout>

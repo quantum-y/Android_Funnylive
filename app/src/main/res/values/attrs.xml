@@ -1,0 +1,48 @@
+<resources>
+	<declare-styleable name="PageIndicator">
+        <attr name="drawableActive" format="reference" />
+        <attr name="drawableInactive" format="reference" />
+        <attr name="indicatorGap" format="dimension" />
+    </declare-styleable>
+    <declare-styleable name="ButtonBarContainerTheme">
+        <attr name="metaButtonBarStyle" format="reference" />
+        <attr name="metaButtonBarButtonStyle" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="MultiStateButton">
+        <attr name="offSrc" format="integer"/>
+        <attr name="isOn" format="boolean"/>
+        <attr name="pressedColor" format="color"/>
+    </declare-styleable>
+<!--cgh_edit-->
+    <declare-styleable name="CircleImageView">
+        <attr name="border_width" format="dimension" />
+        <attr name="border_color" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="RectangleImageView">
+        <attr name="rec_radius_x" format="dimension" />
+        <attr name="rec_radius_y" format="dimension" />
+    </declare-styleable>
+
+    <attr name="firstColor" format="color" />
+    <attr name="secondColor" format="color" />
+    <attr name="circleWidth" format="dimension" />
+    <attr name="speed" format="integer" />
+
+    <declare-styleable name="CustomProgressBar">
+        <attr name="firstColor" />
+        <attr name="secondColor" />
+        <attr name="circleWidth" />
+        <attr name="speed" />
+    </declare-styleable>
+    <declare-styleable name="SpinKitView">
+        <attr name="spinSpeed" format="dimension" />
+        <attr name="drawDelay" format="integer" />
+        <attr name="spinColor" format="color" />
+        <attr name="spinType" format="enum">
+            <enum name="wanderingCubes" value="0"/>
+            <enum name="wanderingCircles" value="1"/>
+        </attr>
+    </declare-styleable>
+</resources>

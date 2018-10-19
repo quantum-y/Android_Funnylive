@@ -1,0 +1,210 @@
+<LinearLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@id/container"
+    style="@style/layout_mm"
+	android:background="@color/white"
+    android:orientation="vertical">
+	<RelativeLayout 
+	    style="@style/layout_mw">
+	    <LinearLayout
+	        android:id="@+id/bar"
+			android:layout_width="match_parent"
+			android:layout_height="@dimen/btn_profile_width"
+			android:gravity="center_vertical"
+			android:orientation="horizontal">
+			<ImageButton
+				android:id="@+id/imgBtn_Back"
+				android:layout_width="@dimen/btn_profile_width"
+				android:layout_height="@dimen/btn_profile_width"
+				android:src="@drawable/ic_arrow_left"
+				android:background="@color/transparent"
+				android:layout_gravity="start|center_vertical"
+				android:contentDescription="@string/action_leave" />
+			<TextView
+				android:id="@+id/txt_profile_userid_id"
+				style="@style/layout_0m"
+				android:gravity="center"
+                android:text="@string/user_id"
+                android:textSize="@dimen/text_size_14"
+                android:textColor="@color/black_color" />
+            <ImageButton
+                android:id="@+id/btn_profile_info_id"
+				android:layout_width="@dimen/btn_profile_width"
+				android:layout_height="@dimen/btn_profile_width"
+				android:src="@drawable/ic_profile"
+                android:background="@color/transparent"
+                android:layout_alignParentEnd="true"
+			    android:layout_centerVertical="true"
+			    android:contentDescription="@string/hello_world"/>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_circleImage"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/explorer_item_circle_height"
+            android:layout_below="@id/bar">
+            <com.coco.livestreaming.app.ui.view.CircleImageView
+		        android:id="@+id/img_profile"
+		        android:layout_width="@dimen/explorer_item_circle_height"
+		        android:layout_height="@dimen/explorer_item_circle_height"
+		        android:src="@drawable/no_image"
+		        android:layout_centerInParent="true" />
+            <TextView
+	            android:id="@+id/txt_level_id"
+	            android:layout_width="@dimen/profile_level_width"
+	            android:layout_height="@dimen/profile_level_height"
+	            android:background="@drawable/round_bg_blue_border_white"
+                android:drawableStart="@drawable/ic_medal_small"
+                android:paddingStart="@dimen/margin_small"
+                android:paddingEnd="@dimen/margin_small"
+                android:layout_marginBottom="-2dp"
+	            android:textColor="@color/white"
+	            android:textStyle="bold"
+	            android:textSize="@dimen/text_size_10"
+	            android:text="Lv.0"
+	            android:gravity="center"
+	            android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true"/>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/txt_profile_username_id"
+            style="@style/layout_mw"
+            android:gravity="center_horizontal"
+            android:text="@string/str_username"
+            android:textColor="@color/gray_5f"
+            android:textSize="@dimen/text_size_12"
+            android:textStyle="bold"
+            android:layout_below="@+id/rl_circleImage"
+            android:layout_marginTop="@dimen/margin_normal"/>
+
+        <Button
+            android:id="@+id/btn_get_my_vip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_profile_username_id"
+            android:layout_marginTop="@dimen/margin_normal"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/round_bg_orange"
+            android:drawableStart="@drawable/ic_crown_white"
+            android:paddingStart="@dimen/margin_normal"
+            android:paddingEnd="@dimen/margin_normal"
+            android:paddingTop="@dimen/margin_small"
+            android:paddingBottom="@dimen/margin_small"
+            android:drawablePadding="@dimen/margin_small"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="@dimen/text_size_12"
+            android:text="@string/profile_user_get_my_vip"/>
+	</RelativeLayout>
+
+    <LinearLayout 
+        style="@style/layout_m0"
+	    android:layout_weight="1"
+        android:layout_marginTop="@dimen/margin_normal"
+	    android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                style="@style/layout_0w"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+                <TextView
+                    android:id="@+id/txt_friend_num_id"
+                    style="@style/profile_follow_num"
+                    android:text="@string/test_value"/>
+                <TextView
+                    android:text="@string/str_friend"
+                    style="@style/profile_follow_label"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:background="@color/gray_color"/>
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/layout_0w"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+                <TextView
+                    android:id="@+id/txt_follow_num_id"
+                    style="@style/profile_follow_num"
+                    android:text="@string/test_value"/>
+                <TextView
+                    android:text="@string/str_following"
+                    style="@style/profile_follow_label"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:background="@color/gray_color"/>
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/layout_0w"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+                <TextView
+                    android:id="@+id/txt_fan_num_id"
+                    style="@style/profile_follow_num"
+                    android:text="@string/test_value"/>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+                    <TextView
+                        android:text="@string/str_fan"
+                        style="@style/profile_follow_label"/>
+                    <TextView
+                        android:text="@string/str_plus_one"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="@dimen/margin_normal"
+                        android:textColor="@color/red_color"
+                        android:textSize="@dimen/text_size_10"/>
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/gray_color"/>
+
+	    <include
+	        style="@style/layout_mw"
+	        layout="@layout/profile_detail_info" />
+    </LinearLayout>
+</LinearLayout>

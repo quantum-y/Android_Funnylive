@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	style="@style/layout_mm"
+	tools:context=".app.ui.activity.MainActivity"
+	android:orientation="vertical">
+
+	<RelativeLayout
+		android:layout_width="match_parent"
+		android:layout_height="70dp">
+		<com.coco.livestreaming.app.ui.widget.AutoScrollViewPager
+			android:id="@+id/autoScrollViewPager"
+			style="@style/layout_mm"
+			android:clickable="true"/>
+		<com.coco.livestreaming.app.ui.widget.PageIndicator
+			android:id="@+id/pageIndicator"
+			style="@style/layout_ww"
+			android:layout_gravity="center_horizontal|bottom"
+			android:layout_marginBottom="@dimen/margin_small"
+			android:layout_centerHorizontal="true"
+			android:layout_alignParentBottom="true"/>
+	</RelativeLayout>
+
+	<!--ListView
+        android:id="@+id/lv_playingList"
+        style="@style/layout_mm"/-->
+
+
+		<RelativeLayout
+			android:layout_width="match_parent"
+			android:layout_height="0dp"
+			android:layout_weight="1">
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:orientation="vertical">
+
+				<GridView
+					android:id="@+id/lv_playingList"
+					android:layout_width="match_parent"
+					android:layout_height="0dp"
+					android:layout_weight="1"
+					android:layout_marginStart="-4dp"
+                    android:layout_marginEnd="-4dp"
+                    android:layout_marginTop="-4dp"
+                    android:layout_marginBottom="-4dp"
+					android:horizontalSpacing="@dimen/margin_tiny"
+					android:verticalSpacing="@dimen/margin_tiny"
+					android:numColumns="2"
+					android:scrollbars="none"
+					tools:listitem="@layout/item_now_playing"/>
+				<View
+					android:id="@+id/temp_bottom_view"
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/home_bottom_view_height"
+					android:visibility="gone"/>
+			</LinearLayout>
+			<LinearLayout
+				android:id="@+id/layoutNoDatas"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:background="@color/white"
+				android:gravity="center"
+				android:orientation="vertical"
+				android:visibility="gone">
+				<ImageView
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:src="@drawable/ic_no_video" />
+				<Button
+					android:id="@+id/btn_refresh"
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/btn_login_height"
+					android:background="@drawable/round_bg_white_border_gray"
+					android:layout_marginTop="@dimen/margin_normal"
+					android:layout_marginLeft="@dimen/padding_login_screen"
+					android:layout_marginRight="@dimen/padding_login_screen"
+					android:text="@string/refresh"
+					android:textColor="@color/gray_cc"
+					android:textSize="@dimen/text_size_14" />
+			</LinearLayout>
+		</RelativeLayout>
+</LinearLayout>

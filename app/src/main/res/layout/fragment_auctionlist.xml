@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/layout_mm"
+    tools:context=".app.ui.activity.MainActivity"
+    android:orientation="vertical">
+    <View
+        style="@style/splite_line_gray"/>
+
+    <ListView
+        android:id="@+id/lv_auctionList"
+        style="@style/layout_m0"
+        android:scrollbars="none"
+        android:divider="@color/transparent"/>
+</LinearLayout>

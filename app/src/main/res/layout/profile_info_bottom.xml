@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/layout_mm"
+    android:orientation="vertical">
+
+    <LinearLayout style="@style/profile_edit_info_row"
+        android:paddingStart="@dimen/margin_large"
+        android:paddingEnd="@dimen/margin_large">
+        <TextView
+            android:text="@string/profile_user_egg"
+            style="@style/profile_edit_info_bottom_row_label"/>
+        <LinearLayout
+            style="@style/layout_0m"
+            android:layout_weight="2"
+            android:gravity="center_vertical">
+            <ImageView
+                android:layout_width="@dimen/margin_extra"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_egg" />
+            <TextView
+                android:id="@+id/txt_send_bana_id"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="start|center_vertical"
+                android:textColor="@color/gray_5f"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <View style="@style/splite_line_gray" />
+
+    <LinearLayout style="@style/profile_edit_info_row"
+        android:paddingStart="@dimen/margin_large"
+        android:paddingEnd="@dimen/margin_large">
+        <TextView
+            android:text="@string/user_info_where"
+            style="@style/profile_edit_info_bottom_row_label"/>
+
+        <LinearLayout
+            style="@style/layout_0m"
+            android:layout_weight="2"
+            android:gravity="center_vertical">
+            <ImageView
+                android:layout_width="@dimen/margin_extra"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_location" />
+            <TextView
+                android:id="@+id/txt_location_id"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="start|center_vertical"
+                android:textColor="@color/gray_5f"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <View style="@style/splite_line_gray" />
+
+    <LinearLayout style="@style/profile_edit_info_row"
+        android:paddingStart="@dimen/margin_large"
+        android:paddingEnd="@dimen/margin_large" >
+        <TextView
+            android:text="@string/str_oneself_introduce"
+            style="@style/profile_edit_info_bottom_row_label" />
+        <RelativeLayout 
+            style="@style/layout_0m"
+            android:layout_weight="2"
+            android:paddingLeft="@dimen/margin_extra">
+            <TextView
+                android:id="@+id/txt_oneself_introduce_id"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/str_oneself_introduce_empty"
+                android:gravity="start|center_vertical"
+                android:textColor="@color/gray_5f"/>
+            <View style="@style/splite_line" android:layout_alignParentBottom="true"/>
+        </RelativeLayout>
+        
+    </LinearLayout>
+</LinearLayout>

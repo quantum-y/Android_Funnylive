@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/layout_mm"
+    android:orientation="vertical">
+
+    <LinearLayout style="@style/profile_edit_info_row">
+        <TextView
+            android:text="@string/str_profile_edit_name"
+            style="@style/profile_setting_bottom_row_label"/>
+        <RelativeLayout style="@style/layout_mm">
+            <EditText
+                android:id="@+id/edit_user_name_id"
+                style="@style/profile_setting_edit_box"
+                android:inputType="text"
+                android:lines="1"
+                android:hint="@string/str_profile_edit_name_hint"
+                android:textColor="@color/gray_5f"/>
+        </RelativeLayout>
+
+    </LinearLayout>
+    <View style="@style/splite_line_gray"/>
+
+    <LinearLayout
+        style="@style/profile_edit_info_row"
+        android:gravity="center_vertical">
+        <TextView
+            android:text="@string/str_profile_edit_sex"
+            style="@style/profile_setting_bottom_row_label"/>
+        <LinearLayout
+            style="@style/layout_0w"
+            android:orientation="horizontal" >
+            <ToggleButton
+				android:id="@+id/btn_sex_male"
+				style="@style/category_toggle_option"
+				android:layout_marginStart="10dp"
+				android:checked="false"
+				android:onClick="onButtonClick"
+                android:tag="1"
+				android:textOff=""
+				android:textOn=""/>
+            <TextView
+                style="@style/sex_option_label"
+                android:text="@string/sex_male"/>
+		</LinearLayout>
+        <LinearLayout
+            style="@style/layout_0w"
+            android:orientation="horizontal" >
+            <ToggleButton
+				android:id="@+id/btn_sex_female"
+				style="@style/category_toggle_option"
+				android:layout_marginStart="10dp"
+				android:checked="false"
+				android:onClick="onButtonClick"
+                android:tag="2"
+				android:textOff=""
+				android:textOn=""/>
+            <TextView
+                style="@style/sex_option_label"
+                android:text="@string/sex_female"/>
+		</LinearLayout>
+		<LinearLayout
+            style="@style/layout_0w"
+            android:orientation="horizontal" >
+            <ToggleButton
+				android:id="@+id/btn_sex_no"
+				style="@style/category_toggle_option"
+				android:layout_marginStart="10dp"
+				android:checked="false"
+				android:onClick="onButtonClick"
+                android:tag="0"
+				android:textOff=""
+				android:textOn=""/>
+            <TextView
+                style="@style/sex_option_label"
+                android:text="@string/sex_protect"/>
+		</LinearLayout>
+    </LinearLayout>
+    <View style="@style/splite_line_gray"/>
+
+    <LinearLayout style="@style/profile_edit_info_row">
+        <TextView
+            android:text="@string/str_profile_edit_birthday"
+            style="@style/profile_setting_bottom_row_label"/>
+        <RelativeLayout style="@style/layout_mm">
+            <TextView
+                android:id="@+id/edit_user_birthday_id"
+                style="@style/profile_setting_edit_box"
+                android:gravity="center_vertical"
+                android:textColor="@color/gray_5f"/>
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <View style="@style/splite_line_gray"/>
+
+    <LinearLayout style="@style/profile_edit_info_row">
+        <TextView
+            android:text="@string/str_profile_edit_native"
+            style="@style/profile_setting_bottom_row_label"/>
+        <RelativeLayout style="@style/layout_mm">
+            <EditText
+                android:id="@+id/edit_user_native_id"
+                style="@style/profile_setting_edit_box"
+                android:hint="@string/str_profile_edit_native_hint"
+                android:textColor="@color/gray_5f"/>
+        </RelativeLayout>
+
+    </LinearLayout>
+    <View style="@style/splite_line_gray"/>
+
+    <LinearLayout style="@style/profile_edit_info_row">
+        <TextView
+            android:text="@string/str_oneself_introduce"
+            style="@style/profile_setting_bottom_row_label"/>
+        <RelativeLayout style="@style/layout_mm">
+            <EditText
+                android:id="@+id/edit_user_introduce_id"
+                style="@style/profile_setting_edit_box"
+                android:hint="@string/str_profile_edit_oneself_hint"
+                android:textColor="@color/gray_5f"/>
+        </RelativeLayout>
+
+    </LinearLayout>
+    <View style="@style/splite_line_gray"/>
+
+    <LinearLayout style="@style/profile_edit_info_row">
+        <TextView
+            android:text="@string/str_profile_edit_knowledge"
+            style="@style/profile_setting_bottom_row_label"/>
+        <RelativeLayout style="@style/layout_mm">
+            <EditText
+                android:id="@+id/edit_user_knowlege_id"
+                style="@style/profile_setting_edit_box"
+                android:hint="@string/str_profile_edit_history_hint"
+                android:textColor="@color/gray_5f"/>
+        </RelativeLayout>
+
+    </LinearLayout>
+</LinearLayout>

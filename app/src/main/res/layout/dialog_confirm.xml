@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+	android:id="@+id/dialog_confirm"
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	style="@style/layout_mm">
+
+	<LinearLayout
+		android:id="@+id/layout_content"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_centerInParent="true"
+		android:paddingTop="30dp"
+		android:orientation="horizontal">
+
+		<LinearLayout
+			android:layout_width="@dimen/dialog_small_width"
+			android:layout_height="wrap_content"
+			android:paddingTop="@dimen/margin_large"
+			android:orientation="vertical"
+			android:background="@drawable/round_bg_white">
+
+			<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="@string/user_invite_accept"
+				android:textColor="@color/black_color"
+				android:textStyle="bold"
+				android:textSize="@dimen/text_size_14"
+				android:padding="10dp"
+				android:gravity="center_horizontal"/>
+
+			<TextView
+				android:id="@+id/txt_confrim_content_id"
+				style="@style/layout_mw"
+				android:layout_marginTop="10dp"
+				android:layout_marginLeft="20dp"
+				android:layout_marginRight="20dp"
+				android:layout_marginBottom="10dp"
+				android:textColor="@color/gray_5f"
+				android:gravity="center"
+				android:textSize="@dimen/text_size_12"/>
+
+			<LinearLayout
+				style="@style/layout_mw"
+				android:padding="@dimen/margin_normal">
+				<Button
+					android:id="@+id/btn_confirm_yes_id"
+					android:layout_width="0dp"
+					android:layout_height="@dimen/item_ex_small_height"
+					android:layout_weight="1"
+					android:background="@drawable/round_bg_orange"
+					android:gravity="center"
+					android:textSize="@dimen/text_size_12"
+					android:text="@string/btn_confrim"
+					android:textColor="@color/gray_5f"/>
+				<View
+					android:layout_width="3dp"
+					android:layout_height="match_parent"/>
+				<Button
+					android:id="@+id/btn_confirm_no_id"
+					android:layout_width="0dp"
+					android:layout_height="@dimen/item_ex_small_height"
+					android:layout_weight="1"
+					android:background="@drawable/round_bg_no_border_gray"
+					android:gravity="center"
+					android:textSize="@dimen/text_size_12"
+					android:text="@string/btn_cancel"
+					android:textColor="@color/gray_5f"/>
+			</LinearLayout>
+		</LinearLayout>
+	</LinearLayout>
+
+	<ImageView
+		android:layout_width="@dimen/dialog_small_width"
+		android:layout_height="wrap_content"
+		android:src="@drawable/ic_star_two"
+		android:layout_centerHorizontal="true"
+		android:layout_alignTop="@id/layout_content"/>
+</RelativeLayout>
