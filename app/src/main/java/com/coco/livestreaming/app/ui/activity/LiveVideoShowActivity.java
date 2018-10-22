@@ -294,7 +294,7 @@ public class LiveVideoShowActivity extends Activity {
             settingData.setTheme(data.getIntExtra("theme",0));
             settingData.setPw(data.getStringExtra("pw"));
             settingData.setLimitNum(data.getIntExtra("limit_num", 500));
-            settingData.setVideoQuality(data.getIntExtra("video_quality", Constants.VIDEO_QUALITY_HIGH));
+            settingData.setVideoQuality(data.getIntExtra("video_quality", Constants.VIDEO_QUALITY_LOW));
             settingData.setEnterChoco(data.getIntExtra("enter_choco", 0));
             settingData.setAdult(data.getBooleanExtra("blnAdult", false));
         }
@@ -603,10 +603,10 @@ public class LiveVideoShowActivity extends Activity {
         } else {//시청자이면 스트림보기화면을 초기화한다.
             if (!CocotvingApplication.mIsEmulator) //ifphone
                 mGoCoder = new GoCoderCamera(LiveVideoShowActivity.this, WOWZCameraView, Constants.VIDEO_QUALITY_LOW, SessionInstance.getInstance().getLoginData().getBjData().getUserid());
-            else
+            else {
                 //mLibCamera = new LibStreamingCamera(LiveVideoShowActivity.this, libCameraView, Constants.VIDEO_QUALITY_LOW, "Nox_" + SessionInstance.getInstance().getLoginData().getBjData().getUserid());
 //                mLibCamera = new LibStreamingCamera(LiveVideoShowActivity.this, libCameraView, Constants.VIDEO_QUALITY_LOW, SessionInstance.getInstance().getLoginData().getBjData().getUserid());
-
+            }
             if (mTheme != 4 ) {//방송자가 녹스가 아니면
                 findViewById(R.id.nox_videoview_id).setVisibility(View.GONE);
                 mGuestVideo = new GuestVideo(LiveVideoShowActivity.this, findViewById(R.id.videoview_id), (GuestPlayerView) findViewById(R.id.videoview_id), null, null);
