@@ -7,9 +7,12 @@ import com.coco.livestreaming.app.ui.fragment.BroadcastSettingFragment;
 import com.coco.livestreaming.app.ui.fragment.data.BroadcastSettingData;
 import com.coco.livestreaming.app.util.Constants;
 import com.coco.livestreaming.R;
+import com.coco.livestreaming.app.util.PermissionUtils;
 
+import android.Manifest;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
@@ -28,6 +31,8 @@ public class BroadcastActivity extends FragmentActivity {
     
     static final int BACK_TAP_INTERVAL = 2000;
     long backPressedTime;
+
+    BroadcastSettingData tempData;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -83,18 +88,26 @@ public class BroadcastActivity extends FragmentActivity {
                 fragmentCurrent = fragmentBroadSetting;
                 break;
             case Constants.BROADCAST_LIVE:
-                Intent intent = new Intent(this, LiveVideoShowActivity.class);
-                intent.putExtra("roomid", SessionInstance.getInstance().getLoginData().getBjData().getUserid());
-                intent.putExtra("nickname", SessionInstance.getInstance().getLoginData().getBjData().getNickname());
-                intent.putExtra("title", data.getTitle());
-                intent.putExtra("theme", data.getTheme());
-                intent.putExtra("pw", data.getPw());
-                intent.putExtra("limit_num", data.getLimitNum());
-                intent.putExtra("video_quality", data.getVideoQuality());
-                intent.putExtra("enter_choco", data.getEnterChoco());
-                intent.putExtra("blnAdult", data.getAdult());
-                startActivity(intent);
-                return;
+
+                if ( !checkPerm() ) {
+                    tempData = data;
+                    requestPerm();
+                    return;
+                } else {
+                    gotoBroadcast(data);
+                    return;
+                }
+//                Intent intent = new Intent(this, LiveVideoShowActivity.class);
+//                intent.putExtra("roomid", SessionInstance.getInstance().getLoginData().getBjData().getUserid());
+//                intent.putExtra("nickname", SessionInstance.getInstance().getLoginData().getBjData().getNickname());
+//                intent.putExtra("title", data.getTitle());
+//                intent.putExtra("theme", data.getTheme());
+//                intent.putExtra("pw", data.getPw());
+//                intent.putExtra("limit_num", data.getLimitNum());
+//                intent.putExtra("video_quality", data.getVideoQuality());
+//                intent.putExtra("enter_choco", data.getEnterChoco());
+//                intent.putExtra("blnAdult", data.getAdult());
+//                startActivity(intent);
             case Constants.BROADCAST_SELECT_FAN:
             	if (fragmentBroadSelectFan == null) {
             		fragmentBroadSelectFan = new BroadcastSelectFanFragment();
@@ -109,8 +122,43 @@ public class BroadcastActivity extends FragmentActivity {
         transaction.commit();
 
     } // end of onButtonClick
-	
-	@Override
+
+    private void gotoBroadcast(BroadcastSettingData data) {
+        Intent intent = new Intent(this, LiveVideoShowActivity.class);
+        intent.putExtra("roomid", SessionInstance.getInstance().getLoginData().getBjData().getUserid());
+        intent.putExtra("nickname", SessionInstance.getInstance().getLoginData().getBjData().getNickname());
+        intent.putExtra("title", data.getTitle());
+        intent.putExtra("theme", data.getTheme());
+        intent.putExtra("pw", data.getPw());
+        intent.putExtra("limit_num", data.getLimitNum());
+        intent.putExtra("video_quality", data.getVideoQuality());
+        intent.putExtra("enter_choco", data.getEnterChoco());
+        intent.putExtra("blnAdult", data.getAdult());
+        startActivity(intent);
+    }
+
+    private boolean checkPerm() {
+	    return (PermissionUtils.checkPermissions(this, Manifest.permission.CAMERA, Manifest.permission.RECORD_AUDIO));
+    }
+
+    private void requestPerm() {
+        PermissionUtils.requestPermissions(this, 11, Manifest.permission.CAMERA, Manifest.permission.RECORD_AUDIO);
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+        if ( requestCode == 11 ) {
+            if ( checkPerm() ) {
+                gotoBroadcast(tempData);
+            } else {
+                Toast.makeText(this, "Allowing camera and record audio permission is needed for broadcasting.", Toast.LENGTH_LONG).show();
+            }
+        }
+    }
+
+    @Override
     public void onBackPressed() {
         /*if (backPressedTime + BACK_TAP_INTERVAL > System.currentTimeMillis()) {
             finish();
