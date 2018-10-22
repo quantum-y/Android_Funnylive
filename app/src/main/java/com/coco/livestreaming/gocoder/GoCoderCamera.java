@@ -294,12 +294,22 @@ public class GoCoderCamera implements
             if (cameraConfigs == null)
                 return;
             Arrays.sort(cameraConfigs);
+
+            // change camera config to lowest ones
+            //            if (nQuality == Constants.VIDEO_QUALITY_HIGH)
+//                selectedConfig = cameraConfigs[cameraConfigs.length - 1];
+//            else if (nQuality == Constants.VIDEO_QUALITY_LOW)
+//                selectedConfig = cameraConfigs[0];
+//            else if (nQuality == Constants.VIDEO_QUALITY_STANDARD)
+//                selectedConfig = cameraConfigs[cameraConfigs.length / 2];
             if (nQuality == Constants.VIDEO_QUALITY_HIGH)
-                selectedConfig = cameraConfigs[cameraConfigs.length - 1];
+                selectedConfig = cameraConfigs[cameraConfigs.length>1?2:cameraConfigs.length>0?1:0];
             else if (nQuality == Constants.VIDEO_QUALITY_LOW)
                 selectedConfig = cameraConfigs[0];
             else if (nQuality == Constants.VIDEO_QUALITY_STANDARD)
-                selectedConfig = cameraConfigs[cameraConfigs.length / 2];
+                selectedConfig = cameraConfigs[cameraConfigs.length>0?1:0];
+
+
             selectedConfig.setAudioChannels(WOWZMediaConfig.AUDIO_CHANNELS_MONO);
             selectedConfig.setAudioBitRate(64000);
             selectedConfig.setAudioSampleRate(16000);
