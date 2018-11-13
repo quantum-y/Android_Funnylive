@@ -282,6 +282,7 @@ public class LiveVideoShowActivity extends Activity {
         layTopBar = (RelativeLayout) findViewById(R.id.lay_top_bar);
         mPresentView = findViewById(R.id.lay_present_view_id);
         mMediaPlayerLoadingProgress = (ProgressBar)findViewById(R.id.progress_mediaplayer_loading_id);
+        mMediaPlayerLoadingProgress.setVisibility(View.INVISIBLE);
         findViewById(R.id.btn_close_room_id).setOnClickListener(MainListener);
         findViewById(R.id.btn_chat_send_id).setOnClickListener(MainListener);
         findViewById(R.id.btn_chat_off_id).setOnClickListener(MainListener);
@@ -302,7 +303,8 @@ public class LiveVideoShowActivity extends Activity {
         mNickName = data.getStringExtra("nickname");
         mTheme = data.getIntExtra("theme", 0);//방테마설정   4이면 방송자가 녹스로 판정
 
-        mStreamURL = "rtsp://" + Constants.WZ_LIVE_HOST_ADDRESS + ":" + Constants.WZ_LIVE_PORT + "/" + Constants.WZ_LIVE_APP_NAME + "/" + mRoomName;
+//        mStreamURL = "rtsp://" + Constants.WZ_LIVE_HOST_ADDRESS + ":" + Constants.WZ_LIVE_PORT + "/" + Constants.WZ_LIVE_APP_NAME + "/" + mRoomName;
+        mStreamURL = "rtmp://" + Constants.WZ_LIVE_HOST_ADDRESS + ":" + Constants.WZ_LIVE_PORT + "/" + Constants.WZ_LIVE_APP_NAME + "/" + mRoomName;
         mTxtRoomName.setText(mNickName);
         //방에 들어온 가입자와 방이름이 같으면 방송자, 다르면 시청자로 판정하고 해당한 처리진행.
         mIsBJ = mRoomName.equals(SessionInstance.getInstance().getLoginData().getBjData().getUserid());
@@ -557,6 +559,8 @@ public class LiveVideoShowActivity extends Activity {
             mSocket = null;
             mIsConnectedSocket = false;
         }
+
+        this.unregisterReceiver(this.mEarPhoneReceiver);
        super.onPause();
     }
     @Override
@@ -643,6 +647,15 @@ public class LiveVideoShowActivity extends Activity {
         };
         mInputMessageView.addOnLayoutChangeListener(onKeyBoardLayoutChangeListener);
 
+//        new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
+//            @Override
+//            public void run() {
+                createSocketIO();
+//            }
+//        },17000);
+
+                            startTimer(Constants.DEFAULT_SCREENSHOT_INTERVAL);
+
         //mashang
         //new SetRoomInfoAsync().execute("live_on", settingData.getTitle(), String.valueOf(settingData.getTheme()), String.valueOf(settingData.getLimitNum()), settingData.getPw(), String.valueOf(settingData.getEnterChoco()), String.valueOf(settingData.getAdult()));
 
@@ -702,7 +715,8 @@ public class LiveVideoShowActivity extends Activity {
             mTxtRoomName.setText(mNickName);
             String strCategory =mNextStreamInfo.getCategory() == "" ? "0" :mNextStreamInfo.getCategory();
             mTheme = Integer.valueOf(strCategory);
-            mStreamURL = "rtsp://" + Constants.WZ_LIVE_HOST_ADDRESS + ":" + Constants.WZ_LIVE_PORT + "/" + Constants.WZ_LIVE_APP_NAME + "/" + mRoomName;
+//            mStreamURL = "rtsp://" + Constants.WZ_LIVE_HOST_ADDRESS + ":" + Constants.WZ_LIVE_PORT + "/" + Constants.WZ_LIVE_APP_NAME + "/" + mRoomName;
+            mStreamURL = "rtmp://" + Constants.WZ_LIVE_HOST_ADDRESS + ":" + Constants.WZ_LIVE_PORT + "/" + Constants.WZ_LIVE_APP_NAME + "/" + mRoomName;
             onPreResume();
         } else {
             mIsPreFinish = true;
@@ -749,7 +763,8 @@ public class LiveVideoShowActivity extends Activity {
                     new RecommendAsync().execute(mRoomName);
                     break;
                 case R.id.btn_chat_send_id:
-                    attemptSend(null, mChatMode, mToUser);
+//                    attemptSend(null, mChatMode, mToUser);
+                    attemptSend(mInputMessageView.getText().toString(), mChatMode, mToUser);
                     InputMethodManager inputMethodManager = (InputMethodManager)getSystemService(INPUT_METHOD_SERVICE);
                     inputMethodManager.hideSoftInputFromWindow(v.getWindowToken(), 0);
                     break;
@@ -1105,8 +1120,8 @@ public class LiveVideoShowActivity extends Activity {
                         onPreFinish();
                     }else {
                         if (result.getResult().equals("live_on") || result.getResult().equals("watch_on")) {
-                            createSocketIO();
-                            startTimer(Constants.DEFAULT_SCREENSHOT_INTERVAL);
+//                            createSocketIO();
+//                            startTimer(Constants.DEFAULT_SCREENSHOT_INTERVAL);
                         }
                         if (result.getResult().equals("live_on")) {
                             new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
@@ -1586,7 +1601,7 @@ public class LiveVideoShowActivity extends Activity {
                         if (mRoomName != null && mSocket != null) {
 //                            mSocket.emit("add user", mRoomName + "/" + SessionInstance.getInstance().getLoginData().getBjData().getUserid() + "/" + SessionInstance.getInstance().getLoginData().getBjData().getNickname(), SessionInstance.getInstance().getLoginData().getBjData().getIsAdmin());
                             int isAdmin = SessionInstance.getInstance().getLoginData().getBjData().getIsAdmin();
-                            mSocket.emit("add user", mRoomName + "/" + SessionInstance.getInstance().getLoginData().getBjData().getUserid() + "/"
+                            mSocket.emit("add user", "live_"+mRoomName + "/" + SessionInstance.getInstance().getLoginData().getBjData().getUserid() + "/"
                                     + SessionInstance.getInstance().getLoginData().getBjData().getNickname() + "/" + String.valueOf(isAdmin));
                         }
                         //Toast.makeText(LiveVideoShowActivity.this, R.string.connect, Toast.LENGTH_LONG).show();
@@ -1735,7 +1750,7 @@ public class LiveVideoShowActivity extends Activity {
                         else if (sVal != null && sVal.equals("Phone_"))
                             streamURL = "rtsp://" + Constants.WZ_LIVE_HOST_ADDRESS + ":" + Constants.WZ_LIVE_PORT + "/" + Constants.WZ_LIVE_APP_NAME + "/" + username;*/
 
-                        streamURL = "rtsp://" + Constants.WZ_LIVE_HOST_ADDRESS + ":" + Constants.WZ_LIVE_PORT + "/" + Constants.WZ_LIVE_APP_NAME + "/" + username;
+                        streamURL = "rtmp://" + Constants.WZ_LIVE_HOST_ADDRESS + ":" + Constants.WZ_LIVE_PORT + "/" + Constants.WZ_LIVE_APP_NAME + "/" + username;
                         //mashang
                         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                         /*for (FanItemResponse item : mGuestList){

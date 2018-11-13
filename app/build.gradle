@@ -34,10 +34,10 @@ dependencies {
     compile files('libs/picasso-2.5.2.jar')
     compile files('libs/okio-1.11.0.jar')
     compile files('libs/okhttp-3.5.0.jar')
-    compile files('libs/socket.io-client-0.8.3.jar')
-    compile files('libs/engine.io-client-0.8.3.jar')
+    compile files('libs/socket.io-client-1.0.0.jar')
+    compile files('libs/engine.io-client-1.0.0.jar')
 //    compile files('libs/libstreaming.jar')
-//    compile files('libs/mediaplayersdk.jar')
+    compile files('libs/mediaplayersdk.jar')
 //    compile(name: 'com.wowza.gocoder.sdk', ext: 'aar')
     compile 'com.wowza.gocoder.sdk.android:com.wowza.gocoder.sdk:2.0@aar'
     compile 'com.android.support:appcompat-v7:25.4.0'

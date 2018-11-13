@@ -15,21 +15,25 @@ public class Constants {
 //    public static final String WEB_HOST_ADDRESS = "192.168.228.2";
 //    public static final String CHAT_HOST_ADDRESS = "192.168.228.2";
 
+//        public static final String WZ_LIVE_HOST_ADDRESS = "211.57.203.41";
+//    public static final String WEB_HOST_ADDRESS = "192.168.69.199:800";
+//    public static final String CHAT_HOST_ADDRESS = "192.168.69.199";
+
 	public static final String IMG_SUB_PATH = "funnylive/image/";
     public static final String IMG_FULL_PATH = Environment.getExternalStorageDirectory().getPath() + "/" + IMG_SUB_PATH;
     
-    public static final String HOME_URL = "http://"+ WEB_HOST_ADDRESS + "/cocotving/";
-    public static final String MOBILE_URL = "http://"+ WEB_HOST_ADDRESS + "/cocotving/mobile/mb/index.php";
+    public static final String HOME_URL = "http://"+ WEB_HOST_ADDRESS + "/funnylive/";
+    public static final String MOBILE_URL = "http://"+ WEB_HOST_ADDRESS + "/funnylive/mobile/mb/index.php";
 
-//    public static final String CHAT_SERVER_URL = "http://" + CHAT_HOST_ADDRESS + ":3000/cocotving";//cocotving은 namespace임.
+//    public static final String CHAT_SERVER_URL = "http://" + CHAT_HOST_ADDRESS + ":3000/funnylive";//cocotving은 namespace임.
     public static final String CHAT_SERVER_URL = "http://" + CHAT_HOST_ADDRESS + ":3000";
     public static final String WZ_LIVE_APP_NAME = "funnylive";
     public static final String WZ_LIVE_PORT = "1935";
 
-    public static final String IMG_MODEL_URL = "http://" + WEB_HOST_ADDRESS + "/cocotving/mobile/files/member/";
-    public static final String IMG_NOTICE_URL = "http://" + WEB_HOST_ADDRESS + "/cocotving/mobile/files/notice/";
-    public static final String IMG_SLIDE_URL = "http://" + WEB_HOST_ADDRESS + "/cocotving/mobile/files/slide";
-    public static final String IMG_AUCTION_URL = "http://" + WEB_HOST_ADDRESS + "/cocotving/mobile/files/auction/";
+    public static final String IMG_MODEL_URL = "http://" + WEB_HOST_ADDRESS + "/funnylive/mobile/files/member/";
+    public static final String IMG_NOTICE_URL = "http://" + WEB_HOST_ADDRESS + "/funnylive/mobile/files/notice/";
+    public static final String IMG_SLIDE_URL = "http://" + WEB_HOST_ADDRESS + "/funnylive/mobile/files/slide";
+    public static final String IMG_AUCTION_URL = "http://" + WEB_HOST_ADDRESS + "/funnylive/mobile/files/auction/";
 
     public static final String WOWZA_USERNM = "root";
     public static final String WOWZA_PW = "root";
@@ -138,10 +142,10 @@ public class Constants {
     public static final String STATE_USER_BLOCK         = "state_user_block";
     public static final String STATE_USER_FORCE_OUT     = "state_user_force_out";
 
-    final public static long DEFAULT_SCREENSHOT_INTERVAL = 6000;
+    final public static long DEFAULT_SCREENSHOT_INTERVAL = 10000;
     public static final int LIBSTREAM_BUFFERING_TIME = 15000;
     public static final int GOCODER_BUFFERING_TIME = 3000;// 3000;
-    public static final int INVALID_EXIT_TIME = 20000;
-    public static final long PING_TIME_OUT = 13000;
+    public static final int INVALID_EXIT_TIME = 25000;
+    public static final long PING_TIME_OUT = 20000;
 
 }

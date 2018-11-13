@@ -59,6 +59,8 @@ public class GuestPlayerView extends SurfaceView implements
     @Override
     protected void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
+        // yyyyyy  vlc customize 18.11.09
+        setSize(mVideoWidth, mVideoHeight);
     }
 
     public GuestPlayerView(Context context) {
@@ -99,8 +101,8 @@ public class GuestPlayerView extends SurfaceView implements
             options.add("--aout=opensles");
             options.add("--audio-time-stretch"); // time stretching
             options.add("-vvv"); // verbosity
-            options.add("--rtsp-tcp");
-            options.add("--network-caching=300");
+//            options.add("--rtsp-tcp");
+//            options.add("--network-caching=3000");
 
             libvlc = new LibVLC(options);
             mHolder.setKeepScreenOn(true);
@@ -123,6 +125,7 @@ public class GuestPlayerView extends SurfaceView implements
 
 //            parent.showProgressView();
         } catch (Exception e) {
+
         }
     }
 
@@ -177,7 +180,9 @@ public class GuestPlayerView extends SurfaceView implements
             lp.height = getHeight();
             lp.width = lp.height*width/height;
         }
+        mHolder.setFixedSize(width, height);
         setLayoutParams(lp);
+        invalidate();
     }
 
     /**
@@ -210,6 +215,7 @@ public class GuestPlayerView extends SurfaceView implements
 
     }
 
+
     private static class MyPlayerListener implements MediaPlayer.EventListener {
         private WeakReference<GuestPlayerView> mOwner;
         public boolean mbPlay = false;
@@ -221,7 +227,7 @@ public class GuestPlayerView extends SurfaceView implements
 
         @Override
         public void onEvent(MediaPlayer.Event event) {
-            GuestPlayerView playerView = mOwner.get();
+            final GuestPlayerView playerView = mOwner.get();
             switch (event.type) {
                 case MediaPlayer.Event.Opening:
                     playerView.parent.showProgressView();
@@ -232,6 +238,14 @@ public class GuestPlayerView extends SurfaceView implements
                 case MediaPlayer.Event.Vout:
                     if (mbPlay)
                     {
+//                        new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
+//                            @Override
+//                            public void run() {
+//                                playerView.parent.mActivity.createSocketIO();
+////                                playerView.parent.mActivity.startTimer(Constants.DEFAULT_SCREENSHOT_INTERVAL);
+//                            }
+//                        },10000);
+
                         playerView.parent.mActivity.onGuestVideoView("watch_on", playerView.parent.mUserID);
                         playerView.parent.hideProgressView();
                     }

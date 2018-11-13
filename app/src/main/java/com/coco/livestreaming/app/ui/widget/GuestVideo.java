@@ -133,7 +133,7 @@ public class GuestVideo {
     }
 
     public void showProgressView() {
-        mActivity.mMediaPlayerLoadingProgress.setVisibility(View.VISIBLE);
+//        mActivity.mMediaPlayerLoadingProgress.setVisibility(View.VISIBLE);
     }
 
     public void hideProgressView() {
