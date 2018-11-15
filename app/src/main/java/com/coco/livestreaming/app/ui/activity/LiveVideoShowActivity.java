@@ -1601,8 +1601,11 @@ public class LiveVideoShowActivity extends Activity {
                         if (mRoomName != null && mSocket != null) {
 //                            mSocket.emit("add user", mRoomName + "/" + SessionInstance.getInstance().getLoginData().getBjData().getUserid() + "/" + SessionInstance.getInstance().getLoginData().getBjData().getNickname(), SessionInstance.getInstance().getLoginData().getBjData().getIsAdmin());
                             int isAdmin = SessionInstance.getInstance().getLoginData().getBjData().getIsAdmin();
-                            mSocket.emit("add user", "live_"+mRoomName + "/" + SessionInstance.getInstance().getLoginData().getBjData().getUserid() + "/"
-                                    + SessionInstance.getInstance().getLoginData().getBjData().getNickname() + "/" + String.valueOf(isAdmin));
+//                            mSocket.emit("add user", "live_"+mRoomName + "/" + SessionInstance.getInstance().getLoginData().getBjData().getUserid() + "/"
+//                                    + SessionInstance.getInstance().getLoginData().getBjData().getNickname() + "/" + String.valueOf(isAdmin));
+                            mSocket.emit("add user", mRoomName + "/" + SessionInstance.getInstance().getLoginData().getBjData().getUserid() + "/"
+                                    + SessionInstance.getInstance().getLoginData().getBjData().getNickname() + "/" + String.valueOf(isAdmin) + "/"
+                                    + SessionInstance.getInstance().getLoginData().getBjData().getClasses());
                         }
                         //Toast.makeText(LiveVideoShowActivity.this, R.string.connect, Toast.LENGTH_LONG).show();
                         mIsConnectedSocket = true;

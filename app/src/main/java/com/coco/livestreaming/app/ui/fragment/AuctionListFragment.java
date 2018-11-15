@@ -89,7 +89,7 @@ public class AuctionListFragment extends Fragment {
         	super.onPostExecute(result);
 
             if (result != null && result.isSuccess()) {
-                arrList.clear();;
+                arrList.clear();
                 arrList.addAll(result.getList());
 
             	listAdapter = new AuctionItemListAdapter(getActivity(), arrList);
@@ -194,6 +194,8 @@ public class AuctionListFragment extends Fragment {
                 imgCount = 4;
             if (data.getFifth() == 5)
                 imgCount = 5;
+
+            ((LinearLayout)convertView.findViewById(R.id.layout_img)).removeAllViews();
 
             for (int i = 0; i < imgCount; i++) {
                 RelativeLayout item = (RelativeLayout) View.inflate(getActivity(), R.layout.item_auction_photo, null);

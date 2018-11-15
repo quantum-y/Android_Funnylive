@@ -36,6 +36,45 @@ public class AuctionItemResponse {
     int commentCount;
     int isliked;
 
+    @SerializedName("auction_hour")
+    int auctionHour;
+    @SerializedName("is_canceled")
+    int isCanceled;
+    int price;
+    int type;
+    @SerializedName("max_price")
+    int maxPrice;
+    @SerializedName("max_user_id")
+    int maxUserId;
+    @SerializedName("max_username")
+    int maxUsername;
+    @SerializedName("max_nickname")
+    int maxNickname;
+
+    public int getAuctionHour() {return auctionHour;}
+    public void setAuctionHour(int value) {this.auctionHour = value;}
+
+    public int getIsCanceled() {return isCanceled;}
+    public void setIsCanceled(int value) {this.isCanceled = value;}
+
+    public int getPrice() {return price;}
+    public void setPrice(int value) {this.price = value;}
+
+    public int getType() {return type;}
+    public void setType(int value) {this.type = value;}
+
+    public int getMaxPrice() {return maxPrice;}
+    public void setMaxPrice(int value) {this.maxPrice = value;}
+
+    public int getMaxUserId() {return maxUserId;}
+    public void setMaxUserId(int value) {this.maxUserId = value;}
+
+    public int getMaxUsername() {return maxUsername;}
+    public void setMaxUsername(int value) {this.maxUsername = value;}
+
+    public int getMaxNickname() {return maxNickname;}
+    public void setMaxNickname(int value) {this.maxNickname = value;}
+
     public String getAuctionId() {return auctionId;}
     public void setAuctionId(String value) {this.auctionId = value;}
 

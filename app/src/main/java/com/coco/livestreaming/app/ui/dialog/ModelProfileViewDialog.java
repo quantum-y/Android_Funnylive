@@ -56,7 +56,7 @@ public class ModelProfileViewDialog extends Dialog {
 		mContext = context;
 		mActivity = activity;
 		mUserID = userid;
-		mSocket = socket;;
+		mSocket = socket;
 	}
 
 	@Override

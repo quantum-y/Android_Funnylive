@@ -21,6 +21,7 @@ public class LoginResponse {
 	int adult;
 	String thumbnail;
 	String platform;
+	int classes;
 
 	public String getNickname() {
 		return nickname;
@@ -114,5 +115,11 @@ public class LoginResponse {
 
 	public void setPlatform(String platform) {
 		this.platform = platform;
+	}
+
+	public int getClasses() { return classes; }
+
+	public void setClasses(int classes) {
+		this.classes = classes;
 	}
 }
