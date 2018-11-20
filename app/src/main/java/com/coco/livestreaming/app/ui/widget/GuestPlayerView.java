@@ -246,7 +246,7 @@ public class GuestPlayerView extends SurfaceView implements
 //                            }
 //                        },10000);
 
-                        playerView.parent.mActivity.onGuestVideoView("watch_on", playerView.parent.mUserID);
+//                        playerView.parent.mActivity.onGuestVideoView("watch_on", playerView.parent.mUserID);
                         playerView.parent.hideProgressView();
                     }
                     break;

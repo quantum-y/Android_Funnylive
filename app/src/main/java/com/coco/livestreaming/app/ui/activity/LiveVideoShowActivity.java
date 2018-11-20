@@ -655,6 +655,7 @@ public class LiveVideoShowActivity extends Activity {
 //        },17000);
 
                             startTimer(Constants.DEFAULT_SCREENSHOT_INTERVAL);
+        new SetRoomInfoAsync().execute("watch_on", "", "", "", "", "", "");
 
         //mashang
         //new SetRoomInfoAsync().execute("live_on", settingData.getTitle(), String.valueOf(settingData.getTheme()), String.valueOf(settingData.getLimitNum()), settingData.getPw(), String.valueOf(settingData.getEnterChoco()), String.valueOf(settingData.getAdult()));
@@ -981,6 +982,7 @@ public class LiveVideoShowActivity extends Activity {
                     Toast.makeText(getContext(), getString(R.string.login_block_failure),Toast.LENGTH_LONG).show();
                 else
                     new SetRoomInfoAsync().execute("watch_off", "", "", "", "", "","");
+//                new SetRoomInfoAsync().execute("watch_on", "", "", "", "", "","");
             }
             Utils.disappearProgressDialog();
             new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
@@ -1136,7 +1138,7 @@ public class LiveVideoShowActivity extends Activity {
                             public void run() {
                                 new FanListAsync().execute(mRoomName);
                             }
-                        },10);
+                        },6000);
                     }
                 } else if (result.getResult().equals("live_on")){
                     Toast.makeText(LiveVideoShowActivity.this, getString(R.string.str_force_out), Toast.LENGTH_LONG).show();
