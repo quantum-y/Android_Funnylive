@@ -1895,14 +1895,15 @@ public class LiveVideoShowActivity extends Activity {
                         username = data.getString("username");
                         nickname = data.getString("nickname");
                         numUsers = data.getInt("numUsers");
-                        isExit = data.getBoolean("flag");
+//                        isExit = data.getBoolean("flag");
                     } catch (JSONException e) {
                         Log.e(TAG, e.getMessage());
                         return;
                     }
                     //멤버퇴장시 가입자목록갱신
                     addLog(username, getResources().getString(R.string.message_user_left), Constants.ALERT_MSG_COMMON, nickname);
-                    if (isExit && !mIsBJ)//방송자가 탈퇴한경우
+                    if (!mIsBJ)//방송자가 탈퇴한경우
+//                        if (isExit && !mIsBJ)//방송자가 탈퇴한경우
                     {
                         Toast.makeText(LiveVideoShowActivity.this, getString(R.string.room_out_alert), Toast.LENGTH_LONG).show();
                         new Handler(Looper.myLooper()).postDelayed(new Runnable() {

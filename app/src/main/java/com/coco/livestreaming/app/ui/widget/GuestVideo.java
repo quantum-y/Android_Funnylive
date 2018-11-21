@@ -65,6 +65,10 @@ public class GuestVideo {
                 @Override
                 public void onAnimationEnd(Animation animation) {
                     mContainer.setAlpha(1.0f);
+                    if ( mCoverImage != null ) {
+                        mCoverImage.setVisibility(View.INVISIBLE);
+                    }
+
                 }
                 @Override
                 public void onAnimationRepeat(Animation animation) {}
@@ -83,8 +87,10 @@ public class GuestVideo {
                         Toast.makeText(mActivity, mActivity.getString(R.string.str_invite_off), Toast.LENGTH_SHORT).show();
                 }
             });
-            if (mGuestPlayerView != null)
+            if (mGuestPlayerView != null) {
                 mGuestPlayerView.setZOrderMediaOverlay(true);
+                mGuestPlayerView.setZOrderOnTop(true);
+            }
             mContainer.startAnimation(mAniTran);
         }
 
