@@ -89,7 +89,9 @@ public class GuestVideo {
             });
             if (mGuestPlayerView != null) {
                 mGuestPlayerView.setZOrderMediaOverlay(true);
-                mGuestPlayerView.setZOrderOnTop(true);
+                if ( mCoverImage != null ) {
+                    mGuestPlayerView.setZOrderOnTop(true);
+                }
             }
             mContainer.startAnimation(mAniTran);
         }
