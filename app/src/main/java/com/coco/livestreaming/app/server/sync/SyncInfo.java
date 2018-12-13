@@ -8,6 +8,7 @@ import com.coco.livestreaming.SessionInstance;
 import com.coco.livestreaming.app.server.response.AuctionDetailResponse;
 import com.coco.livestreaming.app.server.response.AuctionItemListResponse;
 import com.coco.livestreaming.app.server.response.FriendItemResponse;
+import com.coco.livestreaming.app.server.response.InvitePlayingListResponse;
 import com.coco.livestreaming.app.ui.activity.AuctionActivity;
 import com.google.gson.Gson;
 import com.coco.livestreaming.app.debug.Logger;
@@ -280,7 +281,45 @@ public class SyncInfo {
 
         return result;
     }
-    
+
+    public InvitePlayingListResponse syncInvite(String key, String userID, String receiver) {
+
+        InvitePlayingListResponse result = null;
+
+        Map<String, String> params = new HashMap<String, String>();
+
+        String url;
+
+        url = Constants.MOBILE_URL;
+
+        params.put("mode", Constants.INVITE);
+        params.put("token", SessionInstance.getInstance().getLoginData().getBjData().getToken());
+        params.put("key", key);
+        params.put("userid", userID);
+        params.put("roomid", receiver);
+
+//        params.put("mode", Constants.PAN);
+//        params.put("token", SessionInstance.getInstance().getLoginData().getBjData().getToken());
+//        params.put("roomid", userID);
+
+
+        String responseString = NetworkEngine.post(url, params);
+        if (responseString != null && key.equals("get")) {
+            Gson gson = new Gson();
+            try {
+                InvitePlayingListResponse response = gson.fromJson(responseString, InvitePlayingListResponse.class);
+                if (response.isSuccess()) {
+                    result = response;
+                }
+            } catch (Exception ex) {
+                Logger.ex(TAG, ex);
+            }
+        }
+
+        return result;
+    }
+
+
     public ProfileViewResponse syncProfileView(String userid){
         ProfileViewResponse result = null;
     	

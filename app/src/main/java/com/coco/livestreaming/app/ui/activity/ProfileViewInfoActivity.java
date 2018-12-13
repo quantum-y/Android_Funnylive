@@ -121,7 +121,7 @@ public class ProfileViewInfoActivity extends Activity {
                 //((TextView)findViewById(R.id.txt_relation_num_id)).setText(String.valueOf(mMyProfileInfo.getFanCnt() + mMyProfileInfo.getFollowCnt()));
                 //((TextView)findViewById(R.id.txt_constellation_id)).setText(String.valueOf(mMyProfileInfo.getConstellation()));
                 ((TextView)findViewById(R.id.txt_location_id)).setText(String.valueOf(mMyProfileInfo.getLocation()));
-                ((TextView)findViewById(R.id.txt_send_bana_id)).setText(String.valueOf(mMyProfileInfo.getSend_choco_cnt()));
+                ((TextView)findViewById(R.id.txt_send_bana_id)).setText(String.valueOf(mMyProfileInfo.getChococnt()));
                 if (mMyProfileInfo.getIntroduce() != null)
                     ((TextView)findViewById(R.id.txt_oneself_introduce_id)).setText(mMyProfileInfo.getIntroduce());
 

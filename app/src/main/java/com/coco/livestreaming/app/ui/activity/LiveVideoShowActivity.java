@@ -61,6 +61,8 @@ import com.coco.livestreaming.R;
 import com.coco.livestreaming.SessionInstance;
 import com.coco.livestreaming.app.server.response.FanItemResponse;
 import com.coco.livestreaming.app.server.response.FriendItemResponse;
+import com.coco.livestreaming.app.server.response.InvitePlayingItemResponse;
+import com.coco.livestreaming.app.server.response.InvitePlayingListResponse;
 import com.coco.livestreaming.app.server.response.PanListResponse;
 import com.coco.livestreaming.app.server.response.PlayingItemResponse;
 import com.coco.livestreaming.app.server.response.PlayingListResponse;
@@ -207,6 +209,7 @@ public class LiveVideoShowActivity extends Activity {
     //이전/다음 방송으로 가기 상태기발
     private  boolean isNextFlag, isPrevFlag;
     private List<PlayingItemResponse> mPlayingItemList;
+    private List<InvitePlayingItemResponse> mInvitePlayingList;
     private PlayingItemResponse mNextStreamInfo;
     PasswordDialog passwordDlg;
     private String mSelectedUserid;
@@ -304,7 +307,7 @@ public class LiveVideoShowActivity extends Activity {
         mTheme = data.getIntExtra("theme", 0);//방테마설정   4이면 방송자가 녹스로 판정
 
 //        mStreamURL = "rtsp://" + Constants.WZ_LIVE_HOST_ADDRESS + ":" + Constants.WZ_LIVE_PORT + "/" + Constants.WZ_LIVE_APP_NAME + "/" + mRoomName;
-        mStreamURL = "rtmp://" + Constants.WZ_LIVE_HOST_ADDRESS + ":" + Constants.WZ_LIVE_PORT + "/" + Constants.WZ_LIVE_APP_NAME + "/" + mRoomName;
+        mStreamURL = "rtsp://" + Constants.WZ_LIVE_HOST_ADDRESS + ":" + Constants.WZ_LIVE_PORT + "/" + Constants.WZ_LIVE_APP_NAME + "/" + mRoomName;
         mTxtRoomName.setText(mNickName);
         //방에 들어온 가입자와 방이름이 같으면 방송자, 다르면 시청자로 판정하고 해당한 처리진행.
         mIsBJ = mRoomName.equals(SessionInstance.getInstance().getLoginData().getBjData().getUserid());
@@ -560,7 +563,7 @@ public class LiveVideoShowActivity extends Activity {
             mIsConnectedSocket = false;
         }
 
-        this.unregisterReceiver(this.mEarPhoneReceiver);
+//        this.unregisterReceiver(this.mEarPhoneReceiver);
        super.onPause();
     }
     @Override
@@ -603,6 +606,7 @@ public class LiveVideoShowActivity extends Activity {
 //                mLibCamera = new LibStreamingCamera(LiveVideoShowActivity.this, libCameraView, settingData.getVideoQuality(),mRoomName);
 //                mLibCamera.onInit();
             }
+            new InviteListAsyc().execute("init", mRoomName, "");
 
         } else {//시청자이면 스트림보기화면을 초기화한다.
             if (!CocotvingApplication.mIsEmulator) //ifphone
@@ -626,6 +630,47 @@ public class LiveVideoShowActivity extends Activity {
 //            mStreamURL = "rtsp://" + Constants.WZ_LIVE_HOST_ADDRESS + ":" + Constants.WZ_LIVE_PORT + "/vod/sample.mp4";
 //            mStreamURL = "rtsp://" + Constants.WZ_LIVE_HOST_ADDRESS + ":" + Constants.WZ_LIVE_PORT + "/" + Constants.WZ_LIVE_APP_NAME + "/member2";
             mGuestVideo.init(mRoomName, mStreamURL);
+
+            new InviteListAsyc().execute("get", mRoomName, SessionInstance.getInstance().getLoginData().getBjData().getUserid());
+//            if ( !mIsBJ ) {
+//                InvitePlayingListResponse inviteResponse = mWebServer.syncInvite("get", mRoomName, SessionInstance.getInstance().getLoginData().getBjData().getUserid());
+//
+//                if (!mIsBJ && CocotvingApplication.mIsEmulator)//녹스시청자인경우에는 Vitamio 오유로 하여 초청화면을 보여줄수 없음.
+//                    return;
+//
+//                if ( inviteResponse != null ) {
+//                    for (int i = 0; i < inviteResponse.getList().size(); i++) {
+//                        InvitePlayingItemResponse item = (InvitePlayingItemResponse) inviteResponse.getList().get(i);
+//
+//                        mNowInviteCount++;
+//                        String streamURL = "";
+//                        /*if (sVal != null && sVal.equals("Nox_") )
+//                            streamURL = "rtsp://" + Constants.WZ_LIVE_HOST_ADDRESS + ":" + Constants.WZ_LIVE_PORT + "/" + Constants.WZ_LIVE_APP_NAME + "/Nox_" + username;
+//                        else if (sVal != null && sVal.equals("Phone_"))
+//                            streamURL = "rtsp://" + Constants.WZ_LIVE_HOST_ADDRESS + ":" + Constants.WZ_LIVE_PORT + "/" + Constants.WZ_LIVE_APP_NAME + "/" + username;*/
+//
+//                        streamURL = "rtsp://" + Constants.WZ_LIVE_HOST_ADDRESS + ":" + Constants.WZ_LIVE_PORT + "/" + Constants.WZ_LIVE_APP_NAME + "/" + item.getRoom();
+//                        //mashang
+//                        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//                        /*for (FanItemResponse item : mGuestList){
+//                            if (item.getFanID().equals(username)) {
+//                                streamURL = "rtsp://" + Constants.WZ_LIVE_HOST_ADDRESS + ":" + Constants.WZ_LIVE_PORT + "/" + Constants.WZ_LIVE_APP_NAME + "/" + username;
+//                                break;
+//                            }
+//                        }
+//                        if (streamURL.isEmpty())
+//                            //streamURL = "android.resource://" + getPackageName() + "/" + R.raw.a;
+//                            streamURL = "rtsp://" + Constants.WZ_LIVE_HOST_ADDRESS + ":" + Constants.WZ_LIVE_PORT + "/vod/" + username + ".mp4";*/
+//                        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//                        for (GuestVideo itemvideo : mInviteVideoViewList) {
+//                            if (!itemvideo.mIsInit) {
+//                                itemvideo.init(item.getRoom(), streamURL);
+//                                break;
+//                            }
+//                        }
+//                    }
+//                }
+//            }
         }
 
 //        initPresentAnimation();
@@ -656,6 +701,10 @@ public class LiveVideoShowActivity extends Activity {
 
                             startTimer(Constants.DEFAULT_SCREENSHOT_INTERVAL);
         new SetRoomInfoAsync().execute("watch_on", "", "", "", "", "", "");
+
+        if ( mIsBJ ) {
+            attemptSend("Broadcast Start", "alert_msg_broadcast_start", "");
+        }
 
         //mashang
         //new SetRoomInfoAsync().execute("live_on", settingData.getTitle(), String.valueOf(settingData.getTheme()), String.valueOf(settingData.getLimitNum()), settingData.getPw(), String.valueOf(settingData.getEnterChoco()), String.valueOf(settingData.getAdult()));
@@ -697,6 +746,9 @@ public class LiveVideoShowActivity extends Activity {
         for (GuestVideo item : mInviteVideoViewList) {
             if (item != null && item.mIsInit) item.Deinit();
         }
+        if ( mIsBJ ) {
+            attemptSend("Broadcast Stoped", "alert_msg_broadcast_stop", "");
+        }
         destroySocketIO();
         //선물애니메션처리중에있는 메세지 free
         if (mAniHandler != null)
@@ -717,7 +769,7 @@ public class LiveVideoShowActivity extends Activity {
             String strCategory =mNextStreamInfo.getCategory() == "" ? "0" :mNextStreamInfo.getCategory();
             mTheme = Integer.valueOf(strCategory);
 //            mStreamURL = "rtsp://" + Constants.WZ_LIVE_HOST_ADDRESS + ":" + Constants.WZ_LIVE_PORT + "/" + Constants.WZ_LIVE_APP_NAME + "/" + mRoomName;
-            mStreamURL = "rtmp://" + Constants.WZ_LIVE_HOST_ADDRESS + ":" + Constants.WZ_LIVE_PORT + "/" + Constants.WZ_LIVE_APP_NAME + "/" + mRoomName;
+            mStreamURL = "rtsp://" + Constants.WZ_LIVE_HOST_ADDRESS + ":" + Constants.WZ_LIVE_PORT + "/" + Constants.WZ_LIVE_APP_NAME + "/" + mRoomName;
             onPreResume();
         } else {
             mIsPreFinish = true;
@@ -796,6 +848,7 @@ public class LiveVideoShowActivity extends Activity {
             if (mIsBJ) {//와우자에 정확히 접속하여 스트림방송을 진행하는 경우 웹서버에 설정정보를 저장한다.
                 CocotvingApplication.mIsInvalidExitFlag = false;//만일 이전에 비정상종료되엿엇다면 그 상태를 해제함.
                 new SetRoomInfoAsync().execute("live_on", settingData.getTitle(), String.valueOf(settingData.getTheme()), String.valueOf(settingData.getLimitNum()), settingData.getPw(), String.valueOf(settingData.getEnterChoco()), String.valueOf(settingData.getAdult()));
+//                attemptSend("Broadcast Started", "alert_msg_broadcast_start", "");
             } else {//초청되여 스트림이 정상적으로 라이브되는 경우 3초지연하여 모두에게 알림.
                 new Handler(Looper.myLooper()).postDelayed(new Runnable() {
                     @Override
@@ -945,6 +998,86 @@ public class LiveVideoShowActivity extends Activity {
             Utils.disappearProgressDialog();
         }
     }
+
+    public class InviteListAsyc extends AsyncTask<String, String, InvitePlayingListResponse> {
+        @Override
+        protected InvitePlayingListResponse doInBackground(String... args) {
+            InvitePlayingListResponse result = mWebServer.syncInvite(args[0], String.valueOf(args[1]), String.valueOf(args[2]));
+            return result;
+        }
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            if (((CocotvingApplication)(getApplication())).mIsVisibleFlag) {
+                Utils.displayProgressDialog(getContext());
+                ((CocotvingApplication)(getApplication())).mIsVisibleFlag = false;
+            }
+        }
+        @Override
+        protected void onPostExecute(InvitePlayingListResponse result) {
+            super.onPostExecute(result);
+
+            Utils.disappearProgressDialog();
+            new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    ((CocotvingApplication)(getApplication())).mIsVisibleFlag = true;
+                }
+            },10);
+
+            if (result != null) {
+                mInvitePlayingList = result.getList();
+            } else {
+                return;
+//                Toast.makeText(LiveVideoShowActivity.this, getString(R.string.str_no_live_stream_list), Toast.LENGTH_LONG).show();
+            }
+
+                if (!mIsBJ && CocotvingApplication.mIsEmulator)//녹스시청자인경우에는 Vitamio 오유로 하여 초청화면을 보여줄수 없음.
+                    return;
+
+            mNowInviteCount=0;
+                if ( mInvitePlayingList != null ) {
+                    for (int i = 0; i < mInvitePlayingList.size(); i++) {
+                        InvitePlayingItemResponse item = mInvitePlayingList.get(i);
+
+                        mNowInviteCount++;
+                        String streamURL = "";
+                        /*if (sVal != null && sVal.equals("Nox_") )
+                            streamURL = "rtsp://" + Constants.WZ_LIVE_HOST_ADDRESS + ":" + Constants.WZ_LIVE_PORT + "/" + Constants.WZ_LIVE_APP_NAME + "/Nox_" + username;
+                        else if (sVal != null && sVal.equals("Phone_"))
+                            streamURL = "rtsp://" + Constants.WZ_LIVE_HOST_ADDRESS + ":" + Constants.WZ_LIVE_PORT + "/" + Constants.WZ_LIVE_APP_NAME + "/" + username;*/
+
+                        streamURL = "rtsp://" + Constants.WZ_LIVE_HOST_ADDRESS + ":" + Constants.WZ_LIVE_PORT + "/" + Constants.WZ_LIVE_APP_NAME + "/" + item.getRoom();
+                        //mashang
+                        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                        /*for (FanItemResponse item : mGuestList){
+                            if (item.getFanID().equals(username)) {
+                                streamURL = "rtsp://" + Constants.WZ_LIVE_HOST_ADDRESS + ":" + Constants.WZ_LIVE_PORT + "/" + Constants.WZ_LIVE_APP_NAME + "/" + username;
+                                break;
+                            }
+                        }
+                        if (streamURL.isEmpty())
+                            //streamURL = "android.resource://" + getPackageName() + "/" + R.raw.a;
+                            streamURL = "rtsp://" + Constants.WZ_LIVE_HOST_ADDRESS + ":" + Constants.WZ_LIVE_PORT + "/vod/" + username + ".mp4";*/
+                        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                        for (GuestVideo itemvideo : mInviteVideoViewList) {
+                            if (!itemvideo.mIsInit) {
+                                itemvideo.init(item.getRoom(), streamURL);
+                                break;
+                            }
+                        }
+                    }
+                }
+
+        }
+        @Override
+        protected void onCancelled() {
+            super.onCancelled();
+            Utils.disappearProgressDialog();
+        }
+    }
+
 
     public class CheckRoomInAsync extends AsyncTask<String, String, SuccessFailureResponse> {
         @Override
@@ -1748,6 +1881,11 @@ public class LiveVideoShowActivity extends Activity {
                                 return;
                             }
                         }
+
+                        if ( mIsBJ ) {
+                            new InviteListAsyc().execute("insert", username, SessionInstance.getInstance().getLoginData().getBjData().getUserid());
+                        }
+
                         mNowInviteCount++;
                         String streamURL = "";
                         /*if (sVal != null && sVal.equals("Nox_") )
@@ -1755,7 +1893,7 @@ public class LiveVideoShowActivity extends Activity {
                         else if (sVal != null && sVal.equals("Phone_"))
                             streamURL = "rtsp://" + Constants.WZ_LIVE_HOST_ADDRESS + ":" + Constants.WZ_LIVE_PORT + "/" + Constants.WZ_LIVE_APP_NAME + "/" + username;*/
 
-                        streamURL = "rtmp://" + Constants.WZ_LIVE_HOST_ADDRESS + ":" + Constants.WZ_LIVE_PORT + "/" + Constants.WZ_LIVE_APP_NAME + "/" + username;
+                        streamURL = "rtsp://" + Constants.WZ_LIVE_HOST_ADDRESS + ":" + Constants.WZ_LIVE_PORT + "/" + Constants.WZ_LIVE_APP_NAME + "/" + username;
                         //mashang
                         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                         /*for (FanItemResponse item : mGuestList){
@@ -1769,14 +1907,17 @@ public class LiveVideoShowActivity extends Activity {
                             streamURL = "rtsp://" + Constants.WZ_LIVE_HOST_ADDRESS + ":" + Constants.WZ_LIVE_PORT + "/vod/" + username + ".mp4";*/
                         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                         for (GuestVideo item : mInviteVideoViewList) {
-                            if (!item.mIsInit) {
-                                item.init(username, streamURL);
+                            if (!item.mIsInit) {                               item.init(username, streamURL);
                                 break;
                             }
                         }
                         addLog(username, message, Constants.ALERT_MSG_COMMON, nickname);
                     }else if (action.equals(Constants.ALERT_MSG_INVITE_NO)){//시청자로부터 자기의 와우자접속에 문제 생겻음을 알려올때
                         onGuestVideoClose(username);
+                        if ( mIsBJ ) {
+                            new InviteListAsyc().execute("delete", username, "");
+                        }
+
                         addLog(username, message, Constants.ALERT_MSG_COMMON, nickname);
                     }else if (action.equals(Constants.ALERT_MSG_INVITE_REJECT)){//시청자에게 방송자로부터 초청카메라가 close 되였다는 통보를 알려올 경우
                         if (sVal.equals(SessionInstance.getInstance().getLoginData().getBjData().getUserid())) {//초청자라면 고코다나 리브를 스톱 , 일반시청자라면 해당초청화면을 스톱
@@ -1902,7 +2043,8 @@ public class LiveVideoShowActivity extends Activity {
                     }
                     //멤버퇴장시 가입자목록갱신
                     addLog(username, getResources().getString(R.string.message_user_left), Constants.ALERT_MSG_COMMON, nickname);
-                    if (!mIsBJ)//방송자가 탈퇴한경우
+//                    if (!mIsBJ)//방송자가 탈퇴한경우
+                        if (mRoomName.equals(username))//방송자가 탈퇴한경우
 //                        if (isExit && !mIsBJ)//방송자가 탈퇴한경우
                     {
                         Toast.makeText(LiveVideoShowActivity.this, getString(R.string.room_out_alert), Toast.LENGTH_LONG).show();

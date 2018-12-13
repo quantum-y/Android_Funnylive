@@ -19,7 +19,7 @@ public class Constants {
 //    public static final String WEB_HOST_ADDRESS = "192.168.69.199:800";
 //    public static final String CHAT_HOST_ADDRESS = "192.168.69.199";
 
-	public static final String IMG_SUB_PATH = "funnylive/image/";
+    public static final String IMG_SUB_PATH = "funnylive/image/";
     public static final String IMG_FULL_PATH = Environment.getExternalStorageDirectory().getPath() + "/" + IMG_SUB_PATH;
     
     public static final String HOME_URL = "http://"+ WEB_HOST_ADDRESS + "/funnylive/";
@@ -58,6 +58,7 @@ public class Constants {
     public static final String UPDATE_LOCATION = "UPDATE_LOCATION";
     public static final String CHECK_ROOM_IN = "CHECK_ROOM_IN";
     public static final String USER_REGISTER = "USER_REGISTER";
+    public static final String INVITE = "INVITE";
     // added by HiStar
     public static final String AUCTION_SAVE      = "AUCTION_SAVE";
     public static final String AUCTION_LIST      = "AUCTION_LIST";
@@ -146,6 +147,6 @@ public class Constants {
     public static final int LIBSTREAM_BUFFERING_TIME = 15000;
     public static final int GOCODER_BUFFERING_TIME = 3000;// 3000;
     public static final int INVALID_EXIT_TIME = 25000;
-    public static final long PING_TIME_OUT = 20000;
+    public static final long PING_TIME_OUT = 13000;
 
 }
