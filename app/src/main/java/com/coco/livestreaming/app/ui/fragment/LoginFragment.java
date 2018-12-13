@@ -118,6 +118,9 @@ public class LoginFragment extends Fragment {
                     if (strerr != null && strerr.equals("blocked")) {
                         Toast.makeText(getActivity(), getString(R.string.login_block_failure), Toast.LENGTH_LONG).show();
                     }
+                    else if (strerr != null && strerr.equals("multiple_login")) {
+                        Toast.makeText(getActivity(), "현재 계정은 사용중입니다.", Toast.LENGTH_LONG).show();
+                    }
                     else if (strerr != null && strerr.equals("pending")) {
                         passwordDlg = new PasswordDialog(getContext(), 1);
                         passwordDlg.setOnOkClickListener(select_okListener);
@@ -143,32 +146,9 @@ public class LoginFragment extends Fragment {
                         ((LoginActivity)getActivity()).toMainActivity();
                     }
                 }
-                else Toast.makeText(getActivity(), getString(R.string.operation_failure), Toast.LENGTH_LONG).show();
+                else
+                    Toast.makeText(getActivity(), getString(R.string.operation_failure), Toast.LENGTH_LONG).show();
 
-//            	if(result.getBjData() != null && result.getBjData().isSuccess() && (result.getBjData().getError()==null || (!result.getBjData().getError().equals("blocked") && !result.getBjData().getError().equals("pending") && !result.getBjData().getError().equals("rejected") && !result.getBjData().getError().equals("pending_code_fail")))) {
-//                    SessionInstance.initialize(getActivity(), result);
-//            		//Toast.makeText(getActivity(), getString(R.string.login_bj_success), Toast.LENGTH_LONG).show();
-//            		((LoginActivity)getActivity()).toMainActivity();
-//            	} else if (result.getBjData() != null && result.getBjData().isSuccess() && result.getBjData().getError().equals("blocked")){
-//                    Toast.makeText(getActivity(), getString(R.string.login_block_failure), Toast.LENGTH_LONG).show();
-//            	}else if (result.getBjData() != null && result.getBjData().isSuccess() && result.getBjData().getError().equals("pending")) {//첫가입시 인증코드입력
-//                    passwordDlg = new PasswordDialog(getContext(), 1);
-//                    passwordDlg.setOnOkClickListener(select_okListener);
-//                    passwordDlg.setCancelable(true);
-//                    passwordDlg.requestWindowFeature(Window.FEATURE_NO_TITLE);
-//                    passwordDlg.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-//                    try{
-//                        passwordDlg.show();
-//                    }
-//                    catch (Exception e){
-//                        e.printStackTrace();
-//                    }
-//                }else if(result.getBjData() != null && result.getBjData().isSuccess() && result.getBjData().getError().equals("pending_code_fail"))
-//                    Toast.makeText(getActivity(), getString(R.string.dialog_request_code_incorrect), Toast.LENGTH_LONG).show();
-//                else if (result.getBjData() != null && result.getBjData().isSuccess() && result.getBjData().getError().equals("rejected"))
-//                    Toast.makeText(getActivity(), getString(R.string.login_rejected_failure), Toast.LENGTH_LONG).show();
-//                else
-//                    Toast.makeText(getActivity(), getString(R.string.operation_failure), Toast.LENGTH_LONG).show();
             } else {
             	Toast.makeText(getActivity(), getString(R.string.operation_failure), Toast.LENGTH_LONG).show();
             }

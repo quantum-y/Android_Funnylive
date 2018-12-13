@@ -40,6 +40,7 @@ public class Constants {
     public static int SCREEN_WIDTH = 0;
     public static int SCREEN_HEIGHT = 0;
     public static final String LOGIN = "LOGIN";
+    public static final String LOGOUT = "LOGOUT";
     public static final String BROADCASTLIST = "BROADCAST_LIST";
     public static final String PROFILEINFO  = "PROFILE_INFO";
     public static final String PROFILESET   = "PROFILE_SET";

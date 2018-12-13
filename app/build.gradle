@@ -1,8 +1,8 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion "28.0.2"
+    compileSdkVersion 27
+    buildToolsVersion '28.0.3'
     defaultConfig {
         applicationId 'com.wowza.gocoder.sdk.sampleapp'
         minSdkVersion 21
@@ -40,11 +40,13 @@ dependencies {
     compile files('libs/mediaplayersdk.jar')
 //    compile(name: 'com.wowza.gocoder.sdk', ext: 'aar')
     compile 'com.wowza.gocoder.sdk.android:com.wowza.gocoder.sdk:2.0@aar'
-    compile 'com.android.support:appcompat-v7:25.4.0'
-    compile 'com.android.support:recyclerview-v7:25.4.0'
-    compile 'com.android.support:support-v4:25.4.0'
-    compile 'com.android.support:design:25.4.0'
+    compile "com.android.support:appcompat-v7:$appcompatv7_version"
+    compile "com.android.support:recyclerview-v7:$appcompatv7_version"
+    compile "com.android.support:support-v4:$appcompatv7_version"
+    compile "com.android.support:design:$appcompatv7_version"
     compile project(':vitamio')
     compile project(':libvlc')
     compile 'com.google.android.gms:play-services-appindexing:8.4.0'
+    implementation "android.arch.lifecycle:extensions:$lifecycle_version"
+    annotationProcessor "android.arch.lifecycle:compiler:$lifecycle_version"
 }

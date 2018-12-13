@@ -37,6 +37,8 @@ public class ProfileSettingActivity extends FragmentActivity {
     private ToggleButton mSwitchAlarm;
     private ToggleButton mSwitchProtectLocation;
     public View          mAgreementFrame;
+    public String mUserid;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,8 +48,11 @@ public class ProfileSettingActivity extends FragmentActivity {
         mSwitchProtectLocation  = (ToggleButton)findViewById(R.id.switch_protect_location_id);
         mAgreementFrame         = (View)findViewById(R.id.lay_login_agreement_id);
         info = new SyncInfo(this);
+
+        mUserid = "";
         Intent data = getIntent();
-        if (data != null){
+        if (data != null) {
+            mUserid = data.getStringExtra("userid");
             new ProfileViewAsync().execute(data.getStringExtra("userid"));
         }
         findViewById(R.id.img_logout_id).setOnClickListener(new View.OnClickListener() {
@@ -56,8 +61,8 @@ public class ProfileSettingActivity extends FragmentActivity {
                 SessionInstance.clearInstance();
                 ((CocotvingApplication)getApplication()).getGPSTracker().stopUsingGPS();
                 Toast.makeText(ProfileSettingActivity.this, getString(R.string.logout_bj_success), Toast.LENGTH_LONG).show();
-                startActivity(new Intent(ProfileSettingActivity.this, LoginActivity.class));
-                finish();
+
+                new LogoutAsync().execute(mUserid);
             }
         });
         findViewById(R.id.img_back_id).setOnClickListener(new View.OnClickListener() {
@@ -183,7 +188,28 @@ public class ProfileSettingActivity extends FragmentActivity {
                 SessionInstance.getInstance().getLoginData().getBjData().setAlarm(mSwitchAlarm.isChecked() ? 1 : 0);
                 SessionInstance.getInstance().getLoginData().getBjData().setProtect_location(mSwitchProtectLocation.isChecked() ? 1 : 0);
             }
-            //Utils.disappearProgressDialog();
+        }
+        @Override
+        protected void onCancelled() {
+            super.onCancelled();
+        }
+    }
+
+    class LogoutAsync extends AsyncTask<String, String, SuccessFailureResponse> {
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+        }
+        @Override
+        protected SuccessFailureResponse doInBackground(String... strs) {
+            return info.syncLogout(strs[0]);
+        }
+        @Override
+        protected void onPostExecute(SuccessFailureResponse result) {
+            super.onPostExecute(result);
+
+            startActivity(new Intent(ProfileSettingActivity.this, LoginActivity.class));
+            finish();
         }
         @Override
         protected void onCancelled() {

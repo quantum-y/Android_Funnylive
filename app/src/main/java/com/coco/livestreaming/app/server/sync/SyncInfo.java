@@ -73,15 +73,34 @@ public class SyncInfo {
         return result;
     }
 
+    public SuccessFailureResponse syncLogout(String userid){
+        SuccessFailureResponse result = null;
+
+        Map<String, String> params = new HashMap<String, String>();
+        params.put("mode", Constants.LOGOUT);
+        params.put("userid", userid);
+
+        String responseString = NetworkEngine.post(Constants.MOBILE_URL, params);
+        if (responseString != null) {
+            Gson gson = new Gson();
+            try {
+                SuccessFailureResponse response = gson.fromJson(responseString, SuccessFailureResponse.class);
+                if (response.isSuccess()) {
+                    result = response;
+                }
+            } catch (Exception ex) {
+                Logger.ex(TAG, ex);
+            }
+        }
+        return result;
+    }
+
     public PlayingListResponse syncPlayingList(String key) {
 
         PlayingListResponse result = null;
 
         Map<String, String> params = new HashMap<String, String>();
-        
-        String url;
-        
-        url = Constants.MOBILE_URL;
+        String url = Constants.MOBILE_URL;
 
         params.put("mode", Constants.BROADCASTLIST);
         params.put("key", key);
